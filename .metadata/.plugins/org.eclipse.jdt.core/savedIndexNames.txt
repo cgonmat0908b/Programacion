@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\SMR1\Desktop\Cristian DAW 1\Programación Java\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+524495999.index
+3834280472.index
