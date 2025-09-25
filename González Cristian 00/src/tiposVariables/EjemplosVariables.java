@@ -10,22 +10,22 @@ public class EjemplosVariables {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		byte numAlumnos; // Declaramos la variable de numAlumnos
-		numAlumnos = 0;
+		long numAlumnos; // Declaramos la variable de numAlumnos
+		numAlumnos = (byte) 0;
 		System.out.println("valor de la variable: " + numAlumnos);
 		
 		numAlumnos = 12;
 		System.out.println("valor de la variable: " + numAlumnos);
 		
-		double notaAlumnos = 1.75; //Declaramos la variable de notaAlumnos
+		float notaAlumnos =  1.75f; //Declaramos la variable de notaAlumnos
 		System.out.println("valor de la variable: " + notaAlumnos + " cms");
 		
 		char letraDni;
 		letraDni = 'a';
-		System.out.println("valor de la variable: " + letraDni);
+		System.out.println("valor de la variable:\n " + letraDni);
 		
 		String nombreAlumnos = "Cristian";
-		System.out.println("valor de la variable: " + nombreAlumnos);
+		System.out.println("valor de la \"variable\": " + nombreAlumnos);
 		
 		final long NOTA_MAX = 10; // Declaramos la constante
 		System.out.println("valor de la constante: " + NOTA_MAX);
