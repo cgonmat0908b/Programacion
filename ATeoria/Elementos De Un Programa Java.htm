@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="es" xml:lang="es">
+<head>
+    <title>PROG: Elementos de un programa Java | Málaga</title>
+    <link rel="shortcut icon" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme/1759218187/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, PROG: Elementos de un programa Java | Málaga" />
+<link rel="stylesheet" type="text/css" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/styles.php/centros/1759218187_1/all" />
+<link rel="stylesheet" type="text/css" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/filter/syntaxhighlighter/styles/atom-one-light.min.css" />
+<link rel="stylesheet" type="text/css" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/course/format/onetopic/styles.php" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga","apibase":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/r.php\/api","homeurl":{},"sesskey":"Fd7wTHMfJr","sessiontimeout":"28800","sessiontimeoutwarning":"1200","themerev":"1759218187","slasharguments":1,"theme":"centros","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1759218187","admin":"admin","svgicons":true,"usertimezone":"Europa\/Madrid","language":"es","courseId":1709,"courseContextId":207527,"contextid":245628,"contextInstanceId":33263,"langrev":1759288698,"templaterev":"1759218187","siteId":1,"userId":25745};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/theme\/yui_combo.php?m\/1759218187\/","combine":true,"comboBase":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/theme\/yui_combo.php?","ext":false,"root":"m\/1759218187\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_password-form":{"requires":["base","node","event","event-valuechange","moodle-core_availability-form"]},"moodle-availability_password-popup":{"requires":["base","node","event","moodle-core-notification-dialogue","io-base"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_stash-form":{"requires":["base","node","event","handlebars","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_checklist-linkselect":{"requires":["node","event-valuechange"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-block_xp-filters":{"requires":["base","node","moodle-core-dragdrop","moodle-core-notification-confirm","moodle-block_xp-rulepicker"]},"moodle-block_xp-notification":{"requires":["base","node","handlebars","button-plugin","moodle-core-notification-dialogue"]},"moodle-block_xp-rulepicker":{"requires":["base","node","handlebars","moodle-core-notification-dialogue"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_ousupsub-editor":{"requires":["base","node","event","event-custom","moodle-editor_ousupsub-rangy"]},"moodle-editor_ousupsub-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_fontfamily-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_fullscreen-button":{"requires":["event-resize","moodle-editor_atto-plugin"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_teamsmeeting-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_wiris-button":{"requires":["moodle-editor_atto-plugin","get"]},"moodle-atto_wordimport-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1759218187\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/lib\/javascript.php\/1759218187\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/educacionadistancia.juntadeandalucia.es\/centros\/malaga\/lib\/javascript.php\/1759218187\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+<body  id="page-mod-resource-view" class="format-onetopic  path-mod path-mod-resource chrome dir-ltr lang-es yui-skin-sam yui3-skin-sam educacionadistancia-juntadeandalucia-es--centros-malaga pagelayout-incourse course-1709 context-245628 cmid-33263 cm-type-resource category-807 theme uses-drawers drawer-open-index has-secondarynavigation theme_moove">
+<div id="accessibilitybar" class="fixed-top">
+    <div class="container-fluid">
+        <div class="bars">
+            <div class="fontsize">
+                <span>Tamaño de fuente</span>
+                <ul>
+                    <li><a class="btn btn-default" data-action="decrease" title="Disminuir tamaño de letras" id="fontsize_dec">A-</a></li>
+                    <li><a class="btn btn-default" data-action="reset" title="Reiniciar tamaño de letras" id="fontsize_reset">A</a></li>
+                    <li><a class="btn btn-default" data-action="increase" title="Disminuir tamaño de letras" id="fontsize_inc">A+</a></li>
+                </ul>
+            </div>
+            <div class="sitecolor">
+                <span>Color del sitio</span>
+                <ul>
+                    <li><a class="btn btn-default" data-action="reset" title="Reiniciar color del sitio" id="sitecolor_color1">R</a></li>
+                    <li><a class="btn btn-default" data-action="sitecolor-color-2" title="Bajo contraste 1" id="sitecolor_color2">A</a></li>
+                    <li><a class="btn btn-default" data-action="sitecolor-color-3" title="Bajo contraste 2" id="sitecolor_color3">A</a></li>
+                    <li><a class="btn btn-default" data-action="sitecolor-color-4" title="Alto contraste" id="sitecolor_color4">A</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
+<div id="page-wrapper" class="d-print-block">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Salta al contenido principal</a>
+</div><script src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/polyfills/polyfill.js"></script>
+<script src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js"></script><script src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    
+    <nav class="iscentro navbar fixed-top navbar-light bg-white navbar-expand shadow" aria-label="Navegación del sitio">
+        <div class="menu-logo-nombre">
+                <div class="barra_separadora_centros">
+                        <img src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme_eva/1759218187/logo-moodle-centros" class="logo mr-1" alt="Málaga">
+                </div>
+            
+            <div class="contenedor_titulo_instancia">
+                        <div class="flex-grow-1 info-centro">
+                                    
+    
+                                            <div><span class="topCentro">Centro:<br></span> </div>
+                                            <div><span class="d-inline several-centros">I.E.S. Playamar<br></span> </div>
+                                   
+                        </div>
+            </div>
+        </div>
+    <div class="menu_principal">
+        <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_moove-drawers-primary">
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">Panel lateral</span>
+        </button>
+            <div class="primary-navigation ">
+                <nav class="moremenu navigation">
+                    <ul id="moremenu-68dd30114c53a-navbar-nav" role="menubar" class="nav more-nav navbar-nav">
+                                <li data-key="home" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/?redirect=0"
+                                                
+                                                
+                                                data-disableactive="true"
+                                                tabindex="-1"
+                                            >
+                                                Página Principal
+                                            </a>
+                                </li>
+                                <li data-key="myhome" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/my/"
+                                                
+                                                
+                                                data-disableactive="true"
+                                                tabindex="-1"
+                                            >
+                                                Área personal
+                                            </a>
+                                </li>
+                                <li data-key="mycourses" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/my/courses.php"
+                                                
+                                                
+                                                data-disableactive="true"
+                                                tabindex="-1"
+                                            >
+                                                Mis cursos
+                                            </a>
+                                </li>
+                                <li data-key="" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/calendar/view.php?view=month"
+                                                
+                                                
+                                                data-disableactive="true"
+                                                tabindex="-1"
+                                            >
+                                                Calendario
+                                            </a>
+                                </li>
+                        <li role="none" class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton">
+                            <a class="dropdown-toggle nav-link " href="#" id="moremenu-dropdown-68dd30114c53a" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                Más
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left" data-region="moredropdown" aria-labelledby="moremenu-dropdown-68dd30114c53a" role="menu">
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
+        <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+            <!-- page_heading_menu -->
+            
+        </ul>
+    
+        <div id="usernavigation" class="navbar-nav ml-auto ">
+    
+            <div class="navbarcallbacks">
+                
+            </div>
+                <div class="popover-region icon-no-margin">
+                    <a id="help" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/login/forgot_password.php?token=2" class="nav-link position-relative icon-no-margin">
+                        <i class="fa fa-question-circle"></i>
+                    </a>
+                </div>
+            <div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="25745"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-68dd301159d1868dd301138bd24"
+        aria-haspopup="true"
+        aria-label=" Mostrar la ventana de notificaciones cuando no hay ninguna   "
+        tabindex="0">
+                <i class="icon fa-regular fa-bell" title="Mostrar/ocultar menú de notificaciones"></i>
+        <div
+            class="count-container hidden"
+            data-region="count-container"
+            aria-hidden=true
+        >
+            0
+        </div>
+
+    </div>
+    <div 
+        id="popover-region-container-68dd301159d1868dd301138bd24"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Ventana de notificación"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notificaciones</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="Marcar como leído"
+           data-action="mark-all-read"
+           role="button"
+           aria-label="Marcar como leído">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"  ></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-spinner fa-spin fa-fw "  title="Cargando" role="img" aria-label="Cargando"></i></span>
+        </a>
+            <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/message/notificationpreferences.php"
+               title="Preferencias de notificación"
+               aria-label="Preferencias de notificación">
+                <i class="icon fa fa-gear fa-fw " aria-hidden="true"  ></i></a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">No tienes notificaciones</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-spinner fa-spin fa-fw "  title="Cargando" role="img" aria-label="Cargando"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region" id="local-mail-navbar"><a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/local/mail/view.php?t=inbox" class="nav-link btn h-100 d-flex align-items-center px-2 py-0" title="Correo"><i class="fa fa-fw fa-envelope-o icon m-0" style="font-size: 16px"></i></a></div><script>
+//<![CDATA[
+window.local_mail_navbar_data = {"userid":25745,"courseid":1709,"settings":{"enablebackup":true,"maxrecipients":100,"usersearchlimit":100,"maxfiles":5,"maxbytes":10485760,"autosaveinterval":5,"globaltrays":["starred","sent","drafts","trash"],"coursetrays":"all","coursetraysname":"fullname","coursebadges":"fullname","coursebadgeslength":20,"filterbycourse":"fullname","incrementalsearch":true,"incrementalsearchlimit":1000,"courselink":"shortname","messageprocessors":[{"name":"popup","displayname":"Web","locked":false,"enabled":false},{"name":"email","displayname":"Email","locked":false,"enabled":true}]},"strings":{"allcourses":"Todos los cursos","bcc":"Cco","cc":"Cc","changecourse":"Cambiar curso","compose":"Redactar","course":"Curso","drafts":"Borradores","inbox":"Bandeja de entrada","nocoursematchestext":"Ning\u00fan curso coincide con el texto introducido","pluginname":"Correo","preferences":"Preferencias","sendmail":"Enviar correo","sentplural":"Enviados","starredplural":"Destacados","to":"Para","trash":"Papelera"},"courses":[{"id":749,"shortname":"29701349_punto_encuentro","fullname":"Punto de encuentro del I.E.S. Playamar","visible":true,"groupmode":0,"unread":0,"drafts":0},{"id":1873,"shortname":"1873","fullname":"1\u00ba DAW Digitalizaci\u00f3n Aplicada a los SSPP","visible":true,"groupmode":0,"unread":0,"drafts":0},{"id":1872,"shortname":"1872","fullname":"1\u00ba DAW Lenguajes de marcas y SGI","visible":true,"groupmode":0,"unread":0,"drafts":0},{"id":1764,"shortname":"BD_1","fullname":"Bases de Datos DAW","visible":true,"groupmode":0,"unread":0,"drafts":0},{"id":1709,"shortname":"PROG","fullname":"Programaci\u00f3n","visible":true,"groupmode":0,"unread":0,"drafts":0},{"id":1706,"shortname":"1706","fullname":"Entornos de desarrollo - 1\u00ba DAW","visible":true,"groupmode":0,"unread":0,"drafts":0},{"id":1859,"shortname":"1859","fullname":"Curso de Adolfo, Rueda","visible":false,"groupmode":0,"unread":0,"drafts":0},{"id":1758,"shortname":"1758","fullname":"Curso de Miguel \u00c1ngel, Ma\u00f1anes","visible":false,"groupmode":0,"unread":0,"drafts":0},{"id":1702,"shortname":"1702","fullname":"Curso de Francisco Rafael, P\u00e9rez","visible":false,"groupmode":0,"unread":0,"drafts":0},{"id":1701,"shortname":"1701","fullname":"Curso de Pilar, Gonz\u00e1lez","visible":false,"groupmode":0,"unread":0,"drafts":0}],"labels":[]}
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {
+                        var doc = document.getElementsByTagName("head")[0];
+                        var link = document.createElement("link");
+                        link.rel = "stylesheet";
+                        link.href = "https://educacionadistancia.juntadeandalucia.es/centros/malaga/local/mail/svelte/build/global-DuzdCNhf.css";
+                        doc.appendChild(link);
+                    })();
+//]]>
+</script>
+<script type="module" src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/local/mail/svelte/build/navigation-Bpt5cl0L.js"></script>
+            <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    <div class="usermenu">
+                            <div class="dropdown show">
+                                <a href="#" role="button" id="user-menu-toggle" data-toggle="dropdown" aria-label="Menú de usuario"
+                                   aria-haspopup="true" aria-controls="user-action-menu" class="btn dropdown-toggle">
+                                    <span class="userbutton">
+                                        <span class="avatars">
+                                                <span class="avatar current">
+                                                    <span class="userinitials size-35" title="González Mateo, Cristian" aria-label="González Mateo, Cristian" role="img">GC</span>
+                                                </span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div id="user-action-menu" class="dropdown-menu dropdown-menu-right">
+                                    <div id="usermenu-carousel" class="carousel slide" data-touch="false" data-interval="false" data-keyboard="false">
+                                        <div class="carousel-inner">
+                                            <div id="carousel-item-main" class="carousel-item active" role="menu" tabindex="-1" aria-label="Usuario">
+                                                <a id="user_full_name" href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/user/profile.php" class="dropdown-item" role="menuitem" tabindex="-1" aria-label="">
+                                                    González Mateo, Cristian
+                                                </a>
+                    
+                                                <div class="dropdown-divider"></div>
+                                                <a id="accessibilitysettings-control" href="#" class="dropdown-item" role="menuitem" tabindex="-1" aria-label="Accesibilidad">
+                                                    Accesibilidad
+                                                </a>
+                    
+                                                <div class="dropdown-divider"></div>
+                    
+                                                        <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/user/profile.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Perfil
+                                                        </a>
+                                                    
+                                                        <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/grade/report/overview/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Calificaciones
+                                                        </a>
+                                                    
+                                                        <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/user/files.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Archivos privados
+                                                        </a>
+                                                    
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/user/preferences.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Preferencias
+                                                        </a>
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/login/logout.php?sesskey=Fd7wTHMfJr" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Cerrar sesión
+                                                        </a>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            
+        </div>
+        </div>
+    </nav>
+    
+        <div class="secondary-navigation d-print-none moove">
+            <div class="moove-container-fluid menu-centros">
+                <nav class="moremenu navigation">
+                    <ul id="moremenu-68dd30114c0e2-nav-tabs" role="menubar" class="nav more-nav nav-tabs">
+                                    <li data-key="Curso" class="nav-item" role="none" data-forceintomoremenu="false">
+                                                <a role="menuitem" class="nav-link  "
+                                                    href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/course/view.php?id=1709"
+                                                    
+                                                    
+                                                    data-disableactive="true"
+                                                    tabindex="-1"
+                                                >
+                                                    Curso
+                                                </a>
+                                    </li>
+                                    <li data-key="Participantes" class="nav-item" role="none" data-forceintomoremenu="false">
+                                                <a role="menuitem" class="nav-link  "
+                                                    href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/user/index.php?id=1709"
+                                                    
+                                                    
+                                                    data-disableactive="true"
+                                                    tabindex="-1"
+                                                >
+                                                    Participantes
+                                                </a>
+                                    </li>
+                                    <li data-key="Calificaciones" class="nav-item" role="none" data-forceintomoremenu="false">
+                                                <a role="menuitem" class="nav-link  "
+                                                    href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/grade/report/index.php?id=1709"
+                                                    
+                                                    
+                                                    data-disableactive="true"
+                                                    tabindex="-1"
+                                                >
+                                                    Calificaciones
+                                                </a>
+                                    </li>
+                        <li role="none" class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton">
+                            <a class="dropdown-toggle nav-link " href="#" id="moremenu-dropdown-68dd30114c0e2" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                Más
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left" data-region="moredropdown" aria-labelledby="moremenu-dropdown-68dd30114c0e2" role="menu">
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    <!--fin de botones bajar y subir-->
+
+<div  class="drawer drawer-left drawer-primary d-print-none not-initialized" data-region="fixed-drawer" id="theme_moove-drawers-primary" data-preference="" data-state="show-drawer-primary" data-forceopen="0" data-close-on-resize="1">
+    <div class="drawerheader">
+        <button
+            class="btn drawertoggle icon-no-margin hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_moove-drawers-primary"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Cerrar caja"
+        >
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="drawerheadercontent hidden">
+            
+        </div>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                <div class="list-group">
+                <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/?redirect=0" class="list-group-item list-group-item-action  " >
+                    Página Principal
+                </a>
+                <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/my/" class="list-group-item list-group-item-action  " >
+                    Área personal
+                </a>
+                <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/my/courses.php" class="list-group-item list-group-item-action  " >
+                    Mis cursos
+                </a>
+                <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/calendar/view.php?view=month" class="list-group-item list-group-item-action  " >
+                    Calendario
+                </a>
+        </div>
+
+    </div>
+</div>
+
+        <div  class="drawer drawer-left show d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-courseindex" data-preference="drawer-open-index" data-state="show-drawer-left" data-forceopen="0" data-close-on-resize="0">
+    <div class="drawerheader">
+        <button
+            class="btn drawertoggle icon-no-margin hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-courseindex"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Cerrar el índice del curso"
+        >
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="drawerheadercontent hidden">
+                            <div id="courseindexdrawercontrols" class="dropdown">
+                    <button class="btn btn-icon rounded-circle mx-2"
+                            type="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            title="Opciones de índice de cursos"
+                    >
+                        <i class="icon fa fa-ellipsis-v fa-fw m-0" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item"
+                           href="#"
+                           data-action="expandallcourseindexsections"
+                        >
+                            <i class="icon fa fa-angles-down fa-fw " aria-hidden="true"  ></i>
+                            Expandir todo
+                        </a>
+                        <a class="dropdown-item"
+                           href="#"
+                           data-action="collapseallcourseindexsections"
+                        >
+                            <span class="dir-rtl-hide"><i class="icon fa fa-angles-right fa-fw " aria-hidden="true"  ></i></span>
+                            <span class="dir-ltr-hide"><i class="icon fa fa-angles-left fa-fw " aria-hidden="true"  ></i></span>
+                            Colapsar todo
+                        </a>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                        <nav id="courseindex" class="courseindex">
+    <div id="courseindex-content">
+        <div data-region="loading-placeholder-content" aria-hidden="true" id="course-index-placeholder">
+            <ul class="placeholders list-unstyled px-5">
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    </div>
+</div>
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers show-drawer-left  drag-container">
+
+        <header id="page-header" class="moove-container-fluid">
+    <div class="d-flex flex-wrap">
+            <div class="d-none d-md-block" id="page-navbar">
+                <nav aria-label="Barra de navegación">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/my/"
+                        
+                        
+                        
+                    >
+                        Área personal
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/my/courses.php"
+                        
+                        
+                        
+                    >
+                        Mis cursos
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/course/view.php?id=1709&amp;section=1"
+                        
+                        title="Programación"
+                        
+                    >
+                        Programación
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/course/view.php?id=1709&amp;section=1"
+                        
+                        
+                        data-section-name-for="4889" 
+                    >
+                        UD1
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/mod/resource/view.php?id=33263"
+                        aria-current="page"
+                        title="Archivo"
+                        
+                    >
+                        Elementos de un programa Java
+                    </a>
+                </li>
+        </ol>
+</nav>
+            </div>
+        <div class="ml-auto d-flex">
+            
+        </div>
+        <div id="course-header">
+            
+        </div>
+    </div>
+    <div class="d-sm-flex align-items-center">
+                <div class="mr-auto">
+                    <div class="page-context-header"><div class="page-header-image"><div class="content activityiconcontainer icon-size-6 modicon_resource"><img class="icon activityicon " aria-hidden="true" src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/core/1759218187/f/markup?filtericon=1" alt="" /></div></div><div class="page-header-headings"><h1>Elementos de un programa Java</h1></div></div>
+                </div>
+        <div class="header-actions-container ml-auto" data-region="header-actions-container">
+        </div>
+    </div>
+</header>
+
+        <div id="topofscroll" class="main-inner">
+            <div class="drawer-toggles d-flex">
+                    <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
+                        <button
+                            class="btn icon-no-margin"
+                            data-toggler="drawers"
+                            data-action="toggle"
+                            data-target="theme_boost-drawers-courseindex"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Abrir índice del curso"
+                        >
+                            <span class="sr-only">Abrir índice del curso</span>
+                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+            </div>
+
+            <div id="page-content" class="d-print-block">
+                <div id="region-main-box">
+                    <section id="region-main" aria-label="Contenido">
+
+                        <span class="notifications" id="user-notifications"></span>
+                            <span id="maincontent"></span>
+                            <div class="activity-header" data-for="page-activity-header">
+                                    <span class="sr-only">Requisitos de finalización</span>
+                                    <div data-region="activity-information" data-activityname="Elementos de un programa Java" class="activity-information">
+
+
+</div>
+</div>
+                        <div role="main"><div class="resourceworkaround">Haga clic en <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/pluginfile.php/245628/mod_resource/content/1/index.html" onclick="window.open('https://educacionadistancia.juntadeandalucia.es/centros/malaga/pluginfile.php/245628/mod_resource/content/1/index.html', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">index.html</a> para ver el archivo.</div></div>
+                        
+
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="moove-container-fluid p-0 mb-4">
+            <div class="card activity-navigation mdl-bottom">
+    <div class="card-body">
+        <div class="row">
+    <div class="col-md-4">                <div id="prev-activity">
+                        <div class="larrow">
+                            <i class="icon-arrow-left"></i>
+                        </div>
+                        <div class="text">
+                            <span class="nav-guide">
+                                Actividad previa
+                            </span>
+                                <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/mod/resource/view.php?id=33262&forceview=1" id="prev-activity-link" class="btn btn-link" >&#x25C4; Introducción a la programación</a>
+                        </div>
+                </div>
+</div>
+    <div class="col-md-4">                <div class="mdl-align">
+                    <div class="urlselect">
+    <form method="post" action="https://educacionadistancia.juntadeandalucia.es/centros/malaga/course/jumpto.php" class="d-flex flex-wrap align-items-center" id="url_select_f68dd301138bd25">
+        <input type="hidden" name="sesskey" value="Fd7wTHMfJr">
+            <label for="jump-to-activity" class="sr-only" class="m-0 me-2">
+                Ir a...
+            </label>
+        <select  id="jump-to-activity" class="custom-select urlselect" name="jump"
+                 >
+                    <option value="" selected >Ir a...</option>
+                    <option value="/mod/forum/view.php?id=33246&amp;forceview=1"  >Avisos</option>
+                    <option value="/mod/resource/view.php?id=34165&amp;forceview=1"  >Resultados de aprendizaje y criterios de evaluación</option>
+                    <option value="/mod/resource/view.php?id=33249&amp;forceview=1"  >Introducción a la POO con Java</option>
+                    <option value="/mod/resource/view.php?id=33250&amp;forceview=1"  >Programación orientada a objetos</option>
+                    <option value="/mod/resource/view.php?id=33251&amp;forceview=1"  >Ejercicios de programación en Java</option>
+                    <option value="/mod/url/view.php?id=33253&amp;forceview=1"  >Curso de Java</option>
+                    <option value="/mod/url/view.php?id=33254&amp;forceview=1"  >Tutorial de prácticas recomendadas para desarrolladores</option>
+                    <option value="/mod/url/view.php?id=33256&amp;forceview=1"  >Curso completo de Java. (Recomendado)</option>
+                    <option value="/mod/url/view.php?id=33257&amp;forceview=1"  >Curso completo de Java para principiantes</option>
+                    <option value="/mod/url/view.php?id=33258&amp;forceview=1"  >Curso Java básico</option>
+                    <option value="/mod/resource/view.php?id=33261&amp;forceview=1"  >Introducción a la programación.</option>
+                    <option value="/mod/resource/view.php?id=33262&amp;forceview=1"  >Introducción a la programación</option>
+                    <option value="/mod/resource/view.php?id=33264&amp;forceview=1"  >Elementos de un programa Java</option>
+                    <option value="/mod/assign/view.php?id=33266&amp;forceview=1"  >1.1. Primer contacto con Java - Eclipse.</option>
+                    <option value="/mod/assign/view.php?id=33267&amp;forceview=1"  >1.2. Uso de variables y E/S estándar</option>
+                    <option value="/mod/assign/view.php?id=33268&amp;forceview=1"  >1.3. Cálculos simples</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary ms-1" value="Ir">
+            </noscript>
+    </form>
+</div>
+
+                </div>
+</div>
+    <div class="col-md-4">                <div id="next-activity">
+                        <div class="text">
+                            <span class="nav-guide">
+                                Siguiente actividad
+                            </span>
+                                <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/mod/resource/view.php?id=33264&forceview=1" id="next-activity-link" class="btn btn-link" >Elementos de un programa Java &#x25BA;</a>
+                        </div>
+                        <div class="rarrow">
+                            <i class="icon-arrow-right"></i>
+                        </div>
+                </div>
+</div>
+</div>
+    </div>
+</div>
+        </div>
+
+        
+        <footer id="page-footer" class="mt-auto  redes_sociales">
+            <div class="moove-container-fluid footer-columns">
+                <div class="row contenedor-footer sin-enlaces">
+                    
+                    <div class="col-auto contact" >
+                        <div class="d-sm-inline col-auto img-logo-junta">
+                                <span class="logo d-sm-inline logo-ue">  
+                                    <img src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme_eva/1759218187/footer/footer-eu" alt="" title="Unión Europea" width="146" height="86">
+                                </span> 
+                                <span class="logo d-sm-inline logo-footer-gob-esp">  
+                                    <img src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme_eva/1759218187/footer/footer-gob-esp" alt="Logo Gobierno de España" title="Ministerio de Hacienda" width="146" height="86">
+                                </span> 
+                                <span class="logo d-sm-inline logo-footer-fondos">  
+                                    <img src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme_eva/1759218187/footer/footer-fondos" alt="Logo Fondos Europeos" title="Fondos Europeos" width="146" height="86">
+                                </span> 
+                            <!--Imagen footer junta-->
+                            <span class="logo d-sm-inline junta-escritorio">  
+                                <img src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme_eva/1759218187/logo_junta_blanco" alt="" title="Junta de Andalucía" width="146" height="86">
+                            </span> 
+                            <!--Imagen footer junta version movil-->
+                            <span class="logo d-inline d-sm-none junta-movil">  
+                                <img src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/theme/image.php/centros/theme_eva/1759218187/logo_junta_blanco_movil" alt="" title="Junta de Andalucía" width="146" height="86">
+                            </span>
+        
+                        </div>
+                    <div>
+                                    <!-- <div class="contenedor_getintouch">
+                                        <h6 style="line-height: 1.5;">Consejería de Desarrollo Educativo y Formación Profesional</h6>
+                                    </div> -->
+                                    <ul>               
+                                    </ul>
+                                </div>
+                    </div>
+        
+                    <div class="col-auto ml-auto social" >
+                            <p>Síguenos</p>
+                            <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/EducaAnd" target="_blank" class="facebook btn">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a href="https://x.com/educaand" target="_blank" class="twitter btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 1668.56 1221.19" viewBox="0 0 1668.56 1221.19" id="twitter-x"><path d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99
+        		                            h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z" transform="translate(52.39 -25.059)" fill="var(--color-primary)!important"></path></svg>
+                                        </a>
+                                    </li>
+        
+        
+        
+                                    <li>
+                                        <a href="https://www.youtube.com/channel/UCq8I8XprHmCs8R_Jj3hSYdA" target="_blank" class="youtube btn">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a href="https://www.instagram.com/educaand/" target="_blank" class="instagram btn">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+        
+        
+                            </ul>
+                    </div>
+                    <div class="col-12 col column-right">
+                            <div class="plugins_standard_footer_html"></div>
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Modificación: añadimos al footer los botones para subir y bajar la página y el botón de ayuda (icono interrogante) -->
+            <div data-region="footer-container-popover">
+                <button class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover" data-action="footer-popover" aria-label="Mostrar pie de página">
+                    <i class="fa fa-info fa-2x" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="footer-content-popover container" data-region="footer-content-popover">
+                <div class="footer-section p-3 border-bottom content-popover-element">
+                    <div class="card-content-popup"><div>
+<h4 class="text-light">Hola 👋</h4>
+<p class="text-light subtitle">¿Cómo podemos ayudarte?</p>
+</div>
+<div class="card mb-4">
+<div class="card-body">
+<h6 class="subtitle">Docentes</h6>
+<ul class="list-unstyled">
+<li><i class="icon fa fa-caret-right"></i><a href="https://www.juntadeandalucia.es/educacion/cau/index.php?p=8" target="_blank" rel="noopener">Poner incidencia CAUCE</a></li>
+</ul>
+</div>
+</div>
+<div class="card mb-4">
+<div class="card-body">
+<h6 class="subtitle">Enlaces de interés</h6>
+<ul class="list-unstyled">
+<li><i class="icon fa fa-caret-right"></i><a href="https://educacionadistancia.juntadeandalucia.es/" target="_blank" rel="noopener">Plataformas de aprendizaje</a></li>
+<li><i class="icon fa fa-caret-right"></i><a href="https://seneca.juntadeandalucia.es/seneca/jsp/portal/" target="_blank" rel="noopener">Portal Séneca</a></li>
+<li><i class="icon fa fa-caret-right"></i><a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/local/staticpage/view.php?page=aviso-legal-es" target="_blank" rel="noopener">Aviso legal</a></li>
+<li><i class="icon fa fa-caret-right"></i><a href="https://www.juntadeandalucia.es/educacion/portals/web/ced/accesibilidad" target="_blank" rel="noopener">Accesibilidad</a></li>
+</ul>
+</div>
+</div></div>
+                </div>
+            </div>
+        <!--botones de bajar y subir-->
+        <button id="btn-scroll-up" type="button" class="btn btn-primary">
+            <i class="fa fa-arrow-up fa-2x"></i>
+        </button>
+        <button id="btn-scroll-down" type="button" class="btn btn-primary">
+            <i class="fa fa-arrow-down fa-2x"></i>
+        </button>
+        </footer>
+        <script>
+        </script>
+        <script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/requirejs.php/1759218187/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/requirejs/jquery-private',
+        //Modificacion: a�ade jquerys externos
+        select2: 'https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/jquery/select2/select2.min',
+        loading: 'https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/jquery/loading/loading',  
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/lib/javascript.php/1759218187/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.configure({"mathjaxconfig":"\r\nMathJax.Hub.Config({\r\n    config: [\"Accessible.js\", \"Safe.js\"],\r\n    errorSettings: { message: [\"!\"] },\r\n    skipStartupTypeset: true,\r\n    messageStyle: \"none\"\r\n});\r\n","lang":"es"}); M.util.js_complete('filter_mathjaxloader/loader');});;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('es');
+});;
+M.util.js_pending('filter_glossary/autolinker'); require(['filter_glossary/autolinker'], function(amd) {amd.init(); M.util.js_complete('filter_glossary/autolinker');});;
+M.util.js_pending('core_courseformat/courseeditor'); require(['core_courseformat/courseeditor'], function(amd) {amd.setViewFormat("1709", {"editing":false,"supportscomponents":true,"statekey":"1759257885_1759326156","overriddenStrings":[]}); M.util.js_complete('core_courseformat/courseeditor');});;
+
+require(['core_courseformat/local/courseindex/placeholder'], function(component) {
+    component.init('course-index-placeholder');
+});
+;
+
+require(['core_courseformat/local/courseindex/drawer'], function(component) {
+    component.init('courseindex');
+});
+;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://educacionadistancia.juntadeandalucia.es/centros/malaga/mod/resource/view.php?id=33261&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_2(e) { e.halt(); window.open('https://educacionadistancia.juntadeandalucia.es/centros/malaga/mod/resource/view.php?id=33263&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+M.util.js_pending('tool_usertours/usertours'); require(['tool_usertours/usertours'], function(amd) {amd.init([{"tourId":"6","startTour":false,"filtervalues":{"cssselector":{}}}], ["tool_usertours\/filter_cssselector"]); M.util.js_complete('tool_usertours/usertours');});;
+M.util.js_pending('core_courseformat/local/content/activity_header'); require(['core_courseformat/local/content/activity_header'], function(amd) {amd.init(); M.util.js_complete('core_courseformat/local/content/activity_header');});;
+
+    require(['theme_moove/accessibilitybar'], function(AccessibilityBar) {
+        AccessibilityBar.init();
+    });
+;
+
+    require(['theme_eva/moremenu'], function(moremenu) {
+        moremenu(document.querySelector('#moremenu-68dd30114c53a-navbar-nav'));
+    });
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+    require(['core/usermenu', 'theme_moove/accessibilitysettings'], function(UserMenu, AccessibilitySettings) {
+        UserMenu.init();
+
+        AccessibilitySettings.init();
+    });
+;
+
+    require(['theme_eva/moremenu'], function(moremenu) {
+        moremenu(document.querySelector('#moremenu-68dd30114c0e2-nav-tabs'));
+    });
+;
+
+    require(['theme_eva/templates'], function(Templatesjs) {
+        Templatesjs.initFixesNavbar();
+    });
+;
+
+require(['theme_eva/drawers']);
+;
+
+    require(['theme_boost/courseindexdrawercontrols'], function(component) {
+    component.init('courseindexdrawercontrols');
+    });
+;
+
+require(['theme_eva/drawers']);
+;
+
+        require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+            CustomEvents.define('#jump-to-activity', [CustomEvents.events.accessibleChange]);
+            $('#jump-to-activity').on(CustomEvents.events.accessibleChange, function() {
+                if ($(this).val()) {
+                    $('#url_select_f68dd301138bd25').submit();
+                }
+            });
+        });
+    ;
+
+    require(['theme_boost/footer-popover', 'theme_eva/templates'], function(FooterPopover, Templatesjs) {
+        FooterPopover.init();
+        Templatesjs.initFixesFooter();
+    });
+;
+
+M.util.js_pending('theme_eva/loader');
+require(['theme_eva/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
+    M.util.js_complete('theme_eva/loader');
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(245628, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});;
+M.util.js_pending('core/storage_validation'); require(['core/storage_validation'], function(amd) {amd.init(1759324648); M.util.js_complete('core/storage_validation');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?delayStartupUntil=configured"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u00daltima modificaci\u00f3n","name":"Nombre","error":"Error","info":"Informaci\u00f3n","yes":"S\u00ed","no":"No","cancel":"Cancelar","confirm":"Confirmar","areyousure":"\u00bfEst\u00e1 seguro?","closebuttontitle":"Cerrar","unknownerror":"Error desconocido","file":"Archivo","url":"URL","collapseall":"Colapsar todo","expandall":"Expandir todo"},"repository":{"type":"Tipo","size":"Tama\u00f1o","invalidjson":"Cadena JSON no v\u00e1lida","nofilesattached":"No se han adjuntado archivos","filepicker":"Selector de archivos","logout":"Salir","nofilesavailable":"No hay archivos disponibles","norepositoriesavailable":"Lo sentimos, ninguno de sus repositorios actuales puede devolver archivos en el formato solicitado.","fileexistsdialogheader":"El archivo existe","fileexistsdialog_editor":"Un archivo con ese nombre ha sido anexado al texto que Usted est\u00e1 editando","fileexistsdialog_filemanager":"Ya ha sido anexado un archivo con ese nombre","renameto":"Cambiar el nombre a \"{$a}\"","referencesexist":"Existen {$a} enlaces a este archivo","select":"Seleccionar"},"admin":{"confirmdeletecomments":"\u00bfSeguro que quiere eliminar el\/los comentario(s) seleccionados?","confirmation":"Confirmaci\u00f3n"},"debug":{"debuginfo":"Informaci\u00f3n de depuraci\u00f3n","line":"L\u00ednea","stacktrace":"Trazado de la pila (stack)"},"langconfig":{"labelsep":":"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {M.util.help_popups.setup(Y);
+ M.util.js_pending('random68dd301138bd26'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random68dd301138bd26'); });
+})();
+//]]>
+</script>
+
+        
+    </div>
+    
+</div>
+
+
+</body></html>

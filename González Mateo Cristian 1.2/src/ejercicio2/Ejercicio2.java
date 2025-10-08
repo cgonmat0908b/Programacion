@@ -46,7 +46,13 @@ public class Ejercicio2 {
 		System.out.println("Introduce tu peso en kilogramos: ");
 		peso = datos.nextFloat();
 		
-			
+		System.out.println("Nombre: " + nombre);
+		System.out.println("Apellidos: " + apellidos);
+		System.out.println("Edad: " + edad);
+		System.out.println("Dirección: " + direccion);
+		System.out.println("Altura: " + altura);
+		System.out.println("Peso: " + peso);
+	
 
 	}
 
