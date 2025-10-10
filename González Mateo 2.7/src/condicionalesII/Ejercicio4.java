@@ -22,9 +22,20 @@ public class Ejercicio4{
 		
 		double notaMedia = (notaProg + notaBD + notaLM + notaSI) / 4;
 		
+		if (notaMedia > 10 || notaMedia < 0) {
+			System.out.println("Alguna nota ha sido introducida incorrectamente");
+		}else {
+			
 		double redondeoAlza = Math.ceil(notaMedia);
 		System.out.println("Tu nota media redondeada a la alza es: " + redondeoAlza);
 		double redondeoBaja = Math.floor(notaMedia);
 		System.out.println("Tu nota media redondeada a la baja es: " + redondeoBaja);
-   } 
+		
+		if (redondeoAlza > 8 || redondeoBaja > 8) {
+			System.out.println("Enhorabuena, tiene acceso a estudios superiores");
+		}else {
+			System.out.println("Lo lamentamos, no tiene acceso a estuidos superiores");
+		}		
+	  }	
+	} 
 }
