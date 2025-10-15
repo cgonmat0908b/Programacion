@@ -2,6 +2,7 @@
  * Autor:
  * Fecha:
  */
+
 package condicionalesII;
 
 import java.util.Scanner;

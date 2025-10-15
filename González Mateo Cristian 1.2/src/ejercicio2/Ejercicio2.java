@@ -1,13 +1,8 @@
 /*
- *Descripción: Esta es la segunda práctica, en la que se estará
- *poniendo a prueba el uso de la entrada y guardado de datos,
- *interactuando con la máquina para que guarde la información 
- *dada en las variables correspondientes
- *
+ *Descripción: En este ejercicio uso el metodo Scanner para almacenar una serie de datos y posteriormente mostrarlos
+ *en pantalla con una frase.
  *Autor: Cristian González Mateo
- *
  *Fecha: 25/09/25
- *
  */
 
 package ejercicio2;
@@ -15,45 +10,42 @@ package ejercicio2;
 import java.util.Scanner;
 
 public class Ejercicio2 {
+	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Scanner datos = new Scanner(System.in);
-		String nombre;
-		System.out.println("Introduce tu nombre: ");
-		nombre = datos.nextLine();
+		Scanner datos = new Scanner(System.in); //Defino la variable para el método Scanner
+		
+		String nombreEquipo;
+		System.out.println("Introduce el nombre del equipo: ");
+		nombreEquipo = datos.next();
+		//Defino una variable String, pido el dato en pantalla y lo guardo en la variable
 	
-		String apellidos;
-		System.out.println("Introduce tus apellidos: ");
-		apellidos = datos.nextLine();
+		short añoFundacion;
+		System.out.println("Introduce el año de fundación: ");
+		añoFundacion = datos.nextShort();
+		//Defino una variable Short, pido el dato en pantalla y lo guardo en la variable
 		
-		byte edad;
-		System.out.println("Introduce tu edad: ");
-		edad = datos.nextByte();
+		datos.nextLine();//Salto de linea por fallo en el metodo Scanner
 		
-		datos.nextLine();
+		String estadio;
+		System.out.println("Introduce el estadio del equipo: "); 
+		estadio = datos.next();
+		//Defino una variable String, pido el dato en pantalla y lo guardo en la variable
 		
-		String direccion;
-		System.out.println("Introduce tu direccion: ");
-		direccion = datos.nextLine();
+		String nombreCapitan;
+		System.out.println("Introduce el nombre del capitan del equipo: ");
+		nombreCapitan = datos.next();
+		//Defino una variable String, pido el dato en pantalla y lo guardo en la variable
 		
-		float altura;
-		System.out.println("Introduce tu altura en metros: ");
-		altura = datos.nextFloat();
+		System.out.println();
 		
-		float peso;
-		System.out.println("Introduce tu peso en kilogramos: ");
-		peso = datos.nextFloat();
-		
-		System.out.println("Nombre: " + nombre);
-		System.out.println("Apellidos: " + apellidos);
-		System.out.println("Edad: " + edad);
-		System.out.println("Dirección: " + direccion);
-		System.out.println("Altura: " + altura);
-		System.out.println("Peso: " + peso);
-	
-
+		System.out.println("**********************************************************************************************");
+		System.out.println("******* " + "Nombre del Equipo: " + nombreEquipo + " ***********************************************");		
+		System.out.println("******* " + "Fundado: " + añoFundacion + " ****************************************************************");
+		System.out.println("******* " + "Estadio: " + estadio + " ******************************************************************");
+		System.out.println("****** " + "Capitán: " + nombreCapitan + " *************************************************************");
+		//Muestro en pantalla los datos de las variables junto a una frase 
 	}
 
 }
