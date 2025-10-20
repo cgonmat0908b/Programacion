@@ -54,7 +54,6 @@ public class Ejercicio5 {
 			mediaNegativos = 0;
 		}
 		
-		
 		if (contadorPositivos == 0) {
 			System.out.println("No has introducido ningun número positivo por lo tanto la media es 0");
 		}else {
