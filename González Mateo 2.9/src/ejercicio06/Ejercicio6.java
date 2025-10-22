@@ -12,34 +12,34 @@ public class Ejercicio6 {
 		
 		Scanner datos = new Scanner(System.in); // Se crea un objeto Scanner para leer datos del usuario
 		
-		
 		int contadorNegativos = 0;
 		int numIntroducido;
 		int contador = 0;
 		
-		System.out.println("Introduce 100 numeros no nulos ");
-		numIntroducido = datos.nextInt();
-		
-		
 			do {
+				System.out.println("Introduce hasta 100 numeros no nulos ");
+			    numIntroducido = datos.nextInt();
+			    
 				if (numIntroducido > 0) {
 				contador++;
-				System.out.println("Introduce otro numero");
-				numIntroducido = datos.nextInt();
-				
+			
 			}else if (numIntroducido < 0){
 				contador++;
 				contadorNegativos++;
-				System.out.println("Introduce otro numero");
-				numIntroducido = datos.nextInt();
 				
 			}else {
 				System.out.println("El numero introducido es 0, no cuenta, introduce otro");
-				numIntroducido = datos.nextInt();
+				
 			}
-		}while (contador != 99);	
+		}while (contador < 100);	
 			
-		System.out.println("Has introducido " + contadorNegativos);
+		if (contadorNegativos == 0) {
+			System.out.println("No has introducido ningun número negativo");
+			
+		}else {
+			System.out.println("Has introducido " + contadorNegativos + " numeros negativos");
+
+		}
 			
 	}
 
