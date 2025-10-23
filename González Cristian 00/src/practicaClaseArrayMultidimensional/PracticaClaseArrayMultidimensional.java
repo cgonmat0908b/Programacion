@@ -18,7 +18,7 @@ public class PracticaClaseArrayMultidimensional {
 		int tempMenor10 = 0;
 	
 		
-		for (int contadorMeses = 0; contadorMeses < temperatura.length; contadorMeses++) {        //Inicializacion
+		for (int contadorMeses = 0; contadorMeses < temperatura.length; contadorMeses++) {     //Inicializacion
 			for(int contadorDias = 0; contadorDias < temperatura[contadorMeses].length ; contadorDias++) {
 				temperatura[contadorMeses][contadorDias] = (int) (Math.random() * 40);
             
