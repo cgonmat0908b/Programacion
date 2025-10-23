@@ -54,11 +54,11 @@ public class PracticaClaseArrayMultidimensional {
 	   }
 		
 		for (int contadorMeses = 0; contadorMeses < temperatura.length ; contadorMeses++) {
-			diaTemp10 = 0;
+			diaTemp10 = -1; // Tambien se puede con un bucle while
 			
 	    	do {
 	    		diaTemp10++;
-	    	}while (temperatura[contadorMeses][diaTemp10] > 10);
+	    	}while (temperatura[contadorMeses][diaTemp10] >= 10);
 	    	System.out.println("El mes " + contadorMeses  + " el primer dia con menos de 10 grados es " + diaTemp10);
 		} 
 			
