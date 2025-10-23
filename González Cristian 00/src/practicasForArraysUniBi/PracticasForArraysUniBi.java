@@ -47,8 +47,8 @@ public class PracticasForArraysUniBi {
 			i[1][1] = 3;
 			i[1][2] = 2;
 			
-			for (int f = 0;f <= i.length; f++) {
-				for (int w = 0; w <= i.length; w++) {
+			for (int f = 0;f < i.length; f++) {
+				for (int w = 0; w < i[f].length; w++) { 
 					System.out.println("La posicion del array es  " + f + " la posicion del array bidimensional es  " + w + " y guarda el valor " + i[f][w] );
 				}
 				
