@@ -1,6 +1,7 @@
-/* Descripción: Entrada de dos números y comprobar si es mayor, menor o igual
+/* Descripción:
+ * Programa que solicita al usuario hasta 100 números no nulos y cuenta cuántos son positivos y negativos.
  * Autor: Cristian González Mateo
- * Fecha: 06/10/25
+ * Fecha: 18/10/25
  */
 package ejercicio07;
 
@@ -12,41 +13,39 @@ public class Ejercicio7 {
 		
 		Scanner datos = new Scanner(System.in); // Se crea un objeto Scanner para leer datos del usuario
 		
-		int contadorPositivos = 0;
-		int contadorNegativos = 0;
-		int numIntroducido;
-		int contador = 0;
+		int contadorPositivos = 0; // Contador de números positivos
+		int contadorNegativos = 0; // Contador de números negativos
+		int numIntroducido; // Número introducido por el usuario
+		int contador = 0; // Contador total de números válidos introducidos
 		
-			do {
-				System.out.println("Introduce hasta 100 numeros no nulos ");
-			    numIntroducido = datos.nextInt();
+		// Bucle do-while que solicita hasta 100 números no nulos
+		do {
+			System.out.println("Introduce hasta 100 numeros no nulos ");
+			numIntroducido = datos.nextInt();
 			    
-				if (numIntroducido > 0) {
-				contador++;
-				contadorPositivos++;
-			
+			if (numIntroducido > 0) {
+				contador++; // Incrementa contador total
+				contadorPositivos++; // Incrementa contador de positivos
 			}else if (numIntroducido < 0){
-				contador++;
-				contadorNegativos++;
-				
+				contador++; // Incrementa contador total
+				contadorNegativos++; // Incrementa contador de negativos
 			}else {
-				System.out.println("El numero introducido es 0, no cuenta, introduce otro");
-				
+				System.out.println("El numero introducido es 0, no cuenta, introduce otro"); // Mensaje si es 0
 			}
 		}while (contador < 100);	
-			
+		
+		// Muestra resultados sobre los números negativos
 		if (contadorNegativos == 0) {
 			System.out.println("No has introducido ningun número negativo");
-			
 		}else {
 			System.out.println("Has introducido " + contadorNegativos + " numeros negativos");
-
-		}if (contadorPositivos == 0) {
+		}
+		
+		// Muestra resultados sobre los números positivos
+		if (contadorPositivos == 0) {
 			System.out.println("No has introducido ningun número postivio");
-			
 		}else {
 			System.out.println("Has introducido " + contadorPositivos + " numeros positivos");
-
 		}
 			
 	}

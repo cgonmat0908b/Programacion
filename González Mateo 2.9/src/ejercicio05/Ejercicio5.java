@@ -1,6 +1,7 @@
-/* Descripción: Entrada de dos números y comprobar si es mayor, menor o igual
+/* Descripción:
+ * Programa que calcula el factorial de un número positivo introducido por el usuario.
  * Autor: Cristian González Mateo
- * Fecha: 06/10/25
+ * Fecha: 18/10/25
  */
 package ejercicio05;
 
@@ -12,18 +13,16 @@ public class Ejercicio5 {
 		
 		Scanner datos = new Scanner(System.in); // Se crea un objeto Scanner para leer datos del usuario
 		
-		
-		
 		System.out.println("Introduce un numero positivo");
-		int numIntroducido = datos.nextInt();
-		long factorial = 1;
+		int numIntroducido = datos.nextInt(); // Número introducido por el usuario
+		long factorial = 1; // Variable para almacenar el factorial
 		
+		// Bucle for que calcula el factorial del número introducido
 		for (int factor = 1; factor < numIntroducido; factor++) {
-			factorial = factorial * factor;
+			factorial = factorial * factor; // Multiplica los números sucesivos
 		}
-		System.out.println("El factorial de " + numIntroducido + " es " + factorial);
+		System.out.println("El factorial de " + numIntroducido + " es " + factorial); // Muestra el resultado
 		
-	
 	}
 
 }
