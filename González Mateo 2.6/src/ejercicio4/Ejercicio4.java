@@ -2,7 +2,7 @@
  * Autor: Cristian González Mateo
  * Fecha: 06/10/25
  */
-package condicionales;
+package ejercicio4;
 
 import java.util.Scanner;
 

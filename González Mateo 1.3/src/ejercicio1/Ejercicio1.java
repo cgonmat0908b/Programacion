@@ -3,7 +3,7 @@
  * Fecha: 1/10/25
  * Autor: Cristian González Mateo
  */
-package calculosSimples;
+package ejercicio1;
 
 import java.util.Scanner;
 
