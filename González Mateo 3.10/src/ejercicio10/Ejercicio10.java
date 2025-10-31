@@ -29,11 +29,19 @@ por debajo de la media.
 			acum = acum + altura[i];
 			
 			
-			if (altura[i] > altMin) {
-				altMin = altura[i];
+		}
+		
+		altMin = altura[0];
+		altMax= altura[0];
+		for (int w = 0; w < altura.length;w++) {
+			
+			if (altura[w] < altMin) {
+				altMin = altura[w];
 				
-			}else if (altMax < altura[i]) {
-				altMax = altura[i];
+			}
+			if (altMax < altura[w]) {
+				altMax = altura[w];
+				
 			}
 			
 		}

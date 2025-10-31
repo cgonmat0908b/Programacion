@@ -35,7 +35,7 @@ menores que cero y cuántos son igual a cero.
 		for (int i = 0; i < matrizNM.length; i++) {
 			for (int f = 0; f < matrizNM[i].length; f++) {
 				
-				System.out.println("Introduce valores hasta rellenar la longitud del array " + "(" + longitudArray + ")");
+				System.out.println("En la posicion " +  i + " " + f + " introduce un valor");
 				matrizNM[i][f] = datos.nextInt();
 				
 				if(matrizNM[i][f] > 0) {
