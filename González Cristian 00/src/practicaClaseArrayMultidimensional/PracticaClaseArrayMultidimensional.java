@@ -12,17 +12,21 @@ public class PracticaClaseArrayMultidimensional {
 		
 		Scanner datos = new Scanner(System.in);
 		
-		int [][] temperatura = new int [TOTAL_MESES][TOTAL_DIAS]; //Declaración e inicialización de array bidimensional
+		int [][] temperatura = new int [TOTAL_MESES][TOTAL_DIAS];//Declaración e inicialización de array bidimensional
+		String [] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre" , "Octubre", "Noviembre", "Diciembre"};
+		String [] dias = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+		
 		int diaMasCalor, tempMax = 0, diaTemp10;
+		int mes = 0;
+		
 		diaMasCalor = 0;
 		int tempMenor10 = 0;
 	
 		
-		for (int contadorMeses = 0; contadorMeses < temperatura.length; contadorMeses++) {     //Inicializacion
+		for (int contadorMeses = 0; contadorMeses < temperatura.length; contadorMeses++) {//Inicializacion
 			for(int contadorDias = 0; contadorDias < temperatura[contadorMeses].length ; contadorDias++) {
 				temperatura[contadorMeses][contadorDias] = (int) (Math.random() * 40);
-            
-                	
+				
 				}
 				 
 			}
@@ -48,9 +52,11 @@ public class PracticaClaseArrayMultidimensional {
 			if(tempMax < temperatura[contadorMeses][contadorDias]) {
 				tempMax = temperatura[contadorMeses][contadorDias];
 				diaMasCalor = contadorDias;
+				mes = contadorMeses;
+				
 			}	
 		 }
-			System.out.println("El día " + diaMasCalor + " hubo " + tempMax);
+			
 	   }
 		
 		for (int contadorMeses = 0; contadorMeses < temperatura.length ; contadorMeses++) {
@@ -59,9 +65,10 @@ public class PracticaClaseArrayMultidimensional {
 	    	do {
 	    		diaTemp10++;
 	    	}while (temperatura[contadorMeses][diaTemp10] >= 10);
-	    	System.out.println("El mes " + contadorMeses  + " el primer dia con menos de 10 grados es " + diaTemp10);
+	    	System.out.println("El mes " + meses[contadorMeses]  + " el primer dia con menos de 10 grados es " + diaTemp10);
 		} 
 			
+		System.out.println("El día " + diaMasCalor + " de " + meses[mes] + " hubo " + tempMax + "º");
 			
 			
 			
