@@ -15,7 +15,6 @@ public class Ejercicio5 {
 		String frase;
 		int contador = 0;
 		int contadorLetras = 0;
-		int combinacionLetras;
 /*
  * Realiza un programa que lea una frase por teclado e indique si la frase es un palíndromo o
  no (ignorando espacios y sin diferenciar entre mayúsculas y minúsculas).
@@ -43,8 +42,8 @@ Amo la pacífica paloma
 			}
 		}
 
-		combinacionLetras = frase.length();
-		if (contadorLetras == combinacionLetras) {
+		
+		if (contadorLetras == frase.length()) {
 			System.out.println("La frase introducida es un palíndromo");
 			
 		}else System.out.println("La frase introducida no es un palíndromo");
