@@ -1,9 +1,9 @@
-public class Ejercicio14Otro
-{
+package ejercicio14Otro;
 
-    public static void main(String[] args) 
-    {
-        int[] numeros = new int [55];
+public class Ejercicio14Otro {
+
+	public static void main(String[] args) {
+		int[] numeros = new int [55];
         int posicion = 0;
         
         for(int i = 0; i < 11; i++)
