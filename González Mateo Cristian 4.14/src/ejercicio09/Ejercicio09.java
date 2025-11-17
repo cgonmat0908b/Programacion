@@ -8,31 +8,37 @@ public class Ejercicio09 {
 		// TODO Auto-generated method stub
 
 		/*
-		 *  Crea un programa que cree un array de enteros de tamaño 100 y lo rellene con valores
-enteros aleatorios entre 1 y 10 (utiliza 1 + Math.random()*10). Luego pedirá un valor N y
-mostrará en qué posiciones del array aparece N. 	
+		 *  Realiza un programa que pida introducir tres valores enteros y nos diga cuál de ellos es el más
+ pequeño. Impleméntalo creando únicamente una función a la que le pasemos dos valores (no
+ tres) y nos devuelva el mínimo de los dos valores.
 		 */
 		
+		int num1,num2,num3, min1;
         Scanner datos = new Scanner(System.in);
 		
-		int [] nums = new int [100];
-		int numUser;
-		int contadorIguales = 0, contadorMayores = 0;
+		System.out.println("Introduce el primer valor");
+		num1 = datos.nextInt();
 		
-		for (int i = 0; i < nums.length; i++) {
-			nums[i] =  (int) (1 + (Math.random() * 10));
+		System.out.println("Introduce el segundo valor");
+		num2 = datos.nextInt();
+		
+		System.out.println("Introduce el tercer valor");
+		num3 = datos.nextInt();
+		
+		min1 = minimo(num1,num2);
+		System.out.println("El menor entre los 3 numeros es: " + minimo(min1,num3));
 			
-		}
-		
-		System.out.println("Los valores han sido generados, introduce un valor entero entre 1 y 10");
-		numUser = datos.nextInt();
-		
-		for (int f = 0; f < nums.length; f++) {
-			if (nums[f] == numUser) {
-				System.out.println("El numero " + numUser + " se encuentra en la posición " + f);
-				
-			}
-		}
-	}
 
+	}
+	public static int minimo(int a, int b) {
+		   int menor = 0;
+		   if(a < b) {
+			   menor = a;
+			   
+		   }else {
+			   menor = b;
+		   }
+		   return menor;
+	   }
+	
 }

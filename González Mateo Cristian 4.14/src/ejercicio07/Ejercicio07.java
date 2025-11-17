@@ -14,10 +14,30 @@ public class Ejercicio07 {
  double areaRectangulo(double ancho, double alto) // Devuelve el área
 		 */
 		
+		double ancho,alto;
 		Scanner datos = new Scanner(System.in);
 		
+		System.out.println("Introduce el ancho de un rectángulo");
+		ancho = datos.nextDouble();
 		
-	
+		System.out.println("Introduce el alto de un rectángulo");
+		alto = datos.nextDouble();
+		
+		System.out.println("El perimetro del rectangulo es " + perimetroRectangulo(ancho, alto));
+		System.out.println("El area del rectangulo es " + areaRectangulo(ancho, alto));
+		
 	}
 
+	public static double perimetroRectangulo (double ancho, double alto) {
+		double perimetro;
+		
+		perimetro = (ancho * 2) + (alto * 2);
+		return perimetro;
+		
+	}
+	public static double areaRectangulo (double ancho, double alto) {
+		double area;
+		area = ancho * alto;
+		return area;
+	}
 }
