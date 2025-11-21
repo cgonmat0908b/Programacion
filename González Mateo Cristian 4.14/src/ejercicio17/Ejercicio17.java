@@ -10,33 +10,15 @@ public class Ejercicio17 {
 		// TODO Auto-generated method stub
 
 		/*
-		 * Crea un programa que pida al usuario 20 valores enteros e introduzca los 10 primeros en un
- array y los 10 últimos en otro array. Por último, comparará ambos arrays y le dirá al usuario
- si son iguales o no.
+		 *  17. Realiza un programa que nos pida número enteros hasta que se introduzca el 0, diciéndonos,
+ para cada número introducido si es primo o no. Hay que recordar que un número es primo si es
+ divisible por si mismo y por 1. El 1 no es primo por convenio. Se debe crear una función que
+ pasándole un número entero devuelva si es primo o no.
 		 */
 		
 		Scanner datos = new Scanner(System.in);
 		
-		int [] array1 = new int[10];
-		int [] array2 = new int[10];
-		boolean arrayVerdadero;
 		
-		for (int i = 0; i < array1.length; i++) {
-			System.out.println("Introduce 10 dígitos para el primer array");
-			array1[i] = datos.nextInt();
-			
-		}
-		for (int i = 0; i < array2.length; i++) {
-			System.out.println("Introduce 10 dígitos para el segundo array");
-			array2[i] = datos.nextInt();
-			
-		}
-		
-		if(Arrays.equals(array1, array2) == true) {
-			System.out.println("Los arrays son identicos");
-		}else {
-			System.out.println("Los arrays no son identicos");
-		}
 	}
 
 }

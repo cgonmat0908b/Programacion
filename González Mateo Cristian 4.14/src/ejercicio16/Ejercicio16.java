@@ -1,6 +1,6 @@
 package ejercicio16;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ejercicio16 {
 
@@ -8,20 +8,29 @@ public class Ejercicio16 {
 		// TODO Auto-generated method stub
 
 		/*
-		 * . Crea un programa que cree un array de enteros e introduzca la siguiente secuencia de
- valores: 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, etc. hasta introducir 10 diez veces, y luego la
- muestre por pantalla. En esta ocasión has de utilizar Arrays.fill().
+		 * .  16. Escribe un programa que cree un array del tamaño indicado por teclado y luego lo rellene con
+ valores aleatorios (utiliza Math.random()). Implementa la función que rellena un array con
+ valores aleatorios.
 		 */
-		int inicio = 0, fin;
-		int [] array10 = new int [55];
+	
+		Scanner datos = new Scanner(System.in);
 		
-		for (int i = 1; i <= 10; i++) {
-			fin = inicio + i;
-			Arrays.fill(array10, inicio, fin, i);  // Llena array10 desde la posición (inicio) hasta la posición (fin - 1) con el valor (i)
-			inicio = fin;
+		
+		System.out.println("Introduce la longitud del array: ");
+		double [] tamanio = new double [datos.nextInt()];
+	
+		aleatorio(tamanio);
+		
+		for (int i = 0; i < tamanio.length; i++) {
+			System.out.println(tamanio[i]);
 		}
-		System.out.println(Arrays.toString(array10));
-		
+	}
+	
+	public static double[] aleatorio(double [] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			nums[i] = Math.random();
+		}
+		return nums;
 	}
 
 }

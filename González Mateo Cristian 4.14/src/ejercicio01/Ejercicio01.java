@@ -1,3 +1,5 @@
+//Documentación metodo
+
 package ejercicio01;
 
 import java.util.Scanner;

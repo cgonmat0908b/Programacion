@@ -10,25 +10,39 @@ public class Ejercicio15 {
 		// TODO Auto-generated method stub
 
 		/*
-		 * Crea un programa que pida la usuario dos valores N y M y luego cree un array de tamaño N
- que contenga M en todas sus posiciones. Luego muestra el array por pantalla.
+		 *  15. Escribe un programa que cree un array de tamaño 50 con los números naturales comprendidos
+ entre 50 y 99. Luego muestra la suma total y la media. Implementa una función que calcule la
+ suma de un array y otra que calcule la media de un array.
 		 */
 		
 		Scanner datos = new Scanner (System.in);
-		int numIntro;
 		
-		System.out.println("Introduce el tamaño del array");
-		int [] arrayIntro = new int [datos.nextInt()];
+		int[] natur = new int [50];
+		int inicio = 50;
 		
-		System.out.println("Introduce el número que habrá en cada posción del array");
-		numIntro = datos.nextInt();
-		
-		Arrays.fill(arrayIntro,numIntro );
-		
-		for (int i = 0; i < arrayIntro.length; i++) {
-			System.out.println("En la posición " + i + " hay guardado " + arrayIntro[i]);
+		for(int i = 0; i < natur.length; i++) {
+			natur[i] = i + inicio;
 		}
-
+		System.out.println("La suma de los naturales de 50 a 99 es: " + sumaArray(natur));
+		System.out.println("La media de la suma de los numeros comprendidos de 50 a 99 es: " + mediaArray(natur));
+	}
+	
+	public static int sumaArray(int[] array) {
+		int suma = 0;
+		for(int i = 0; i < array.length; i++) {
+			suma = suma + array[i];
+		}
+		return suma;
+	}
+	public static double mediaArray (int[] array) {
+		double media = 0;
+		int contador = 0;
+		for(int i = 0; i < array.length; i++) {
+			media = media + array[i];
+			contador++;
+		}
+		media = media / contador;
+		return media;
 	}
 
 }

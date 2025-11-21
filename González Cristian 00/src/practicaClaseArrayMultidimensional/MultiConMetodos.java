@@ -25,17 +25,7 @@ public class MultiConMetodos {
 		
 		return tempMod;
 	}
-	public static int  tempMax (int tempMaxima ){
-		int[][] tempMax = new int [12][30];
-		int tempMaxi = 0;
-		
-		for (int i = 0; i < tempMaxima.length; i++) {
-			for (int f = 0; f < tempMaxima[i].length; f++) {
-				if(tempMaxima[i][f] > tempMaxi) {
-					
-				}
-			}
-		}
+
 		
 	}
-}
+

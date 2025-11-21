@@ -1,96 +1,42 @@
+//Documentación metodo
+
 /*
  * 
  */
 package ejercicio14;
+
+import java.util.Scanner;
 
 public class Ejercicio14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		/*Crea un programa que cree un array de enteros e introduzca la siguiente secuencia de
- valores: 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, etc. hasta introducir 10 diez veces, y luego la
- muestre por pantalla.
+		/* 14. Escribe una función que muestre por pantalla un triángulo como el del ejemplo. Deberá recibir
+ dos parámetros: el carácter que se desea imprimir y el número de líneas del triángulo.
 		 * 
 		 */
-		int [] secuencia = new int [10];
-		int contador = 0;
+		String letra;
+		int numLin;
 		
-		for (int i = 0; i < secuencia.length; i++) {
-			
-			if (i == 0) {
-				System.out.print((i + 1));
+		Scanner datos = new Scanner(System.in);
+		
+		System.out.println("Introduce el caracter");
+		letra = datos.next();
+		
+		System.out.println("Introduce el número de lineas del triangulo");
+		numLin = datos.nextInt();
+		
+		triangulo(letra,numLin);
+		
+	 }
+	public static void triangulo(String letra, int numLin) {
+		for (int i = 1; i <= numLin; i++) {
+			for (int j = 1; j < i; j++) {
+				System.out.print("\t" + letra);
 			}
-			else if (i == 1) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 2);
-				
-				contador = 0;
-				
-			}else if (i == 2) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 3);
-		    
-				contador = 0;
-				
-			}else if (i == 3) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 4);
-		    
-				contador = 0;
-				
-			}else if (i == 4) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 5);
-				
-				contador = 0;
-				
-		    }else if (i == 5) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 6);
-				
-				contador = 0;
-				
-		    }else if (i == 6) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 7);
-				
-				contador = 0;
-				
-		    }else if (i == 7) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 8);
-				
-				contador = 0;
-				
-		    }else if (i == 8) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 9);
-				
-				contador = 0;
-				
-		    }else if (i == 9) {
-				do {
-					System.out.print( ", " + (i + 1));
-					contador++;
-				}while (contador != 10);
-		    }
-	    }
-	 }		
+			System.out.println();
+			System.out.println("\t");
+		}
+	}
 }
