@@ -10,24 +10,15 @@ public class Ejercicio19 {
 		// TODO Auto-generated method stub
 
 		/*
-		 *  Necesitamos crear un programa para mostrar el ranking de puntuaciones de un torneo de
- ajedrez con 8 jugadores. Se le pedirá al usuario que introduzca las puntuaciones de todos los
- jugadores (habitualmente valores entre 1000 y 2800, de tipo entero) y luego muestre las
- puntuaciones en orden descendente (de la más alta a la más baja).
+		 *  19. Realiza un programa que permita comprobar si una terna de valores enteros (3 valores) se ajusta
+ a la ecuación de Pitágoras: x ² + y ² = z ².
+ 
+ El programa solicita al usuario los valores x, y, z.
+ 
+ Se deberá crear una función a la que se le pase x, y, z y devuelva si son iguales o no.
+ Por ejemplo: 3 ² + 4 ² = 5 ².
 		 */
 		Scanner datos = new Scanner(System.in);
-		
-		int[] jugadores  = new int [8];
-		for (int i = 0; i < jugadores.length; i++) {
-			System.out.println("Jugador " + (i + 1) + " introduzca su elo (1000-2800):");
-			jugadores[i] = datos.nextInt();
-		}
-		
-		Arrays.sort(jugadores);
-		
-		for (int i = (jugadores.length - 1); i >= 0	; i--) {
-			System.out.println("El jugador " + (i + 1) + " tiene " + jugadores[i] + " elo");
-		}
 		
 	}
 
