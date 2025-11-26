@@ -1,5 +1,7 @@
 package ejercicio4;
 
+import java.util.Scanner;
+
 public class Ejercicio4 {
 
 	public static void main(String[] args) {
@@ -31,9 +33,54 @@ apto".
 		 */
 		
 		
+		Scanner datos = new Scanner (System.in);
+		
+		int edad;
+		double notaAcademica, renta;
+		boolean nivelIdioma;
+		String respuesta;
+		
+		System.out.println("Introduce tu edad: ");
+		edad = datos.nextInt();
+		
+		System.out.println("Introduce tu nota academica: ");
+		notaAcademica = datos.nextDouble();
+		
+		System.out.println("Introduce tu renta: ");
+		renta = datos.nextDouble();
+		
+		System.out.println("Tienes un B2 de inglés o superior? (si/no)");
+		respuesta = datos.next();
+		if(respuesta.equals("si")) {
+			nivelIdioma = true;
+			
+		}else {
+			nivelIdioma = false;
+		}
+		
+		accesoBecaUsa(edad,notaAcademica,renta,nivelIdioma);
 	}
 
-	public static boolean accesoBecaUsa(int edad, double notaAcademica, double renta, boolean nivelIdioma) {
+	public static void accesoBecaUsa(int edad, double notaAcademica, double renta, boolean nivelIdioma) {
+			
+		if(nivelIdioma == false) {
+			System.out.println("No apto");
+			
+		}else if(edad > 30) {
+			System.out.println("No apto");
+			
+		}else if(notaAcademica > 9) {
+			System.out.println("Apto");
+			
+		}else if(notaAcademica < 5) {
+			System.out.println("No apto");
+			
+		}else if((notaAcademica == 6 || notaAcademica ==  7 || notaAcademica ==  8) && renta < 20000) {
+			System.out.println("Apto");
+			
+		}else {
+			System.out.println("No apto");
+		}
 		
 	}
 }
