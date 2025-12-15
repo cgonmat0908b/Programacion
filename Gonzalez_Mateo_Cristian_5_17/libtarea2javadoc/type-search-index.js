@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"libtarea2","l":"Dado"},{"p":"libtarea2","l":"Teatro"},{"p":"libtarea2","l":"Utilidades"}];updateSearchResults();
