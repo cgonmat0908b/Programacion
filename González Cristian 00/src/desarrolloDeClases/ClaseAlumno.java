@@ -48,9 +48,23 @@ public class ClaseAlumno {
 	
 	public static final byte NUM_MIN_ALUM_GRUPO = 1;
 	
+	
+	// Constantes para constructores sin todos los parametros
+	
+	public static final String DNI = "25739063Q";
+	public static final String NOMBRE = "Desconocido";
+	public static final String APELLIDOS = "Desconocido";
+	public static final float PESO = 1.00f;
+	public static final float ALTURA = 1.00f;
+	public static final LocalDate FECHA_NACIMIENTO = LocalDate.of(2014, 01, 01);
+	public static final byte NUM_HERMANOS = 0;
+	public static final boolean MAYOR_EDAD = false;
+	public static final LocalTime HORA_MAX_ALUM = LocalTime.of(21, 30);
+	
+	
 	// Atributos de clase variables
 	
-	private static int numAlumnosMatriculados;
+	private static short numAlumnosMatriculados;
 	
 	// Atributos de objeto variables
 	
@@ -76,7 +90,7 @@ public class ClaseAlumno {
 	 * Creación del constructor de la clase ClaseAlumno
 	 */
 	
-	public ClaseAlumno(String dni,String nombre,String apellidos,float peso,float altura,LocalDate fechaNacimiento,byte numHermanos,boolean mayorEdad, LocalTime horaMaxAlum) throws IllegalArgumentException{
+	public ClaseAlumno(String dni,String nombre,String apellidos,float peso,float altura,LocalDate fechaNacimiento,byte numHermanos, LocalTime horaMaxAlum) throws IllegalArgumentException{
 		
 		if(dni == null || dni.isEmpty()) {
 			throw new IllegalArgumentException("El parametro es nulo o contiene una cadena vacia");
@@ -108,6 +122,9 @@ public class ClaseAlumno {
 		if(numHermanos < 0) {
 			throw new IllegalArgumentException("No puedes tener hermanos negativos");
 		}
+		if(horaMax(horaMaxAlum) == false) {
+			throw new IllegalArgumentException("Hora introducida no valida");
+		}
 		
 		this.dni = dni;
 		this.nombre = nombre;
@@ -117,10 +134,26 @@ public class ClaseAlumno {
 		this.fechaNacimiento = fechaNacimiento;
 		this.numHermanos = numHermanos;
 		this.mayorEdad = MayorEdad(fechaNacimiento);
+		this.horaMaxAlum = horaMaxAlum;
 		
 		numAlumnosMatriculados++;
 		
 	}
+	
+	public ClaseAlumno(String dni,String nombre,String apellidos) {
+		this(dni, nombre, apellidos, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, HORA_MAX_ALUM);
+	}
+	
+	public ClaseAlumno() {
+		this(DNI, NOMBRE, APELLIDOS, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, HORA_MAX_ALUM);
+	}
+	
+	/* 3 parametros Dni, nombre y apellidos
+	 * sin parametros
+	 * 
+	 */
+	
+	
 	
 	//Metodo que comprueba que el formato del DNI sea 8 numeros y 1 letra dado el Dni como parametro.
 	
@@ -129,7 +162,7 @@ public class ClaseAlumno {
 		
 		if(dni == null || !dni.matches("[0-9]{8}[A-Z]")) {
 			dniValido = false;
-			return dniValido;
+			
 			
 		}else {
 			dniValido = true;
@@ -187,14 +220,21 @@ public class ClaseAlumno {
 		
 	}
 	
-	/*Dudas: 
-	 * 
-	 * MayoriaEdad: La mayoria de edad he realizado un método para calcularla, no estoy seguro de si en el constructor se ha de introducir como parametro/atributo.
-	 * 
-	 * LocalTime horaMaxAlum, no he echo con el atributo nada aún porque pienso en añadir como atributo turnoAlumno y asignar la horaMaxAlum según el turno que tenga como parámetro.
-	 * 
-	 * 
-	 */
+	// Metodo que comprueba si la hora máxima del alumno se encuentra entre los valores establecidos
+	
+	public static boolean horaMax(LocalTime horaMaxAlumno) {
+		boolean horaMax = false;
+		
+		if(horaMaxAlumno.isAfter(LocalTime.of(21, 30)) || horaMaxAlumno.isBefore(LocalTime.of(8, 30))) {
+			horaMax = false;
+			
+		}else {
+			horaMax = true;
+		}
+		return horaMax;
+	}
+	
+	
 }
 
 
