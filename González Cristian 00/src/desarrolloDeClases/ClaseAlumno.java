@@ -51,15 +51,15 @@ public class ClaseAlumno {
 	
 	// Constantes para constructores sin todos los parametros
 	
-	public static final String DNI = "25739063Q";
-	public static final String NOMBRE = "Desconocido";
-	public static final String APELLIDOS = "Desconocido";
-	public static final float PESO = 1.00f;
-	public static final float ALTURA = 1.00f;
-	public static final LocalDate FECHA_NACIMIENTO = LocalDate.of(2014, 01, 01);
-	public static final byte NUM_HERMANOS = 0;
-	public static final boolean MAYOR_EDAD = false;
-	public static final LocalTime HORA_MAX_ALUM = LocalTime.of(21, 30);
+	private static final String DNI = "25739063Q";
+	private static final String NOMBRE = "Desconocido";
+	private static final String APELLIDOS = "Desconocido";
+	private static final float PESO = 1.00f;
+	private static final float ALTURA = 1.00f;
+	private static final LocalDate FECHA_NACIMIENTO = LocalDate.of(2014, 01, 01);
+	private static final byte NUM_HERMANOS = 0;
+	private static final boolean MAYOR_EDAD = false;
+	private static final LocalTime HORA_MAX_ALUM = LocalTime.of(21, 30);
 	
 	
 	// Atributos de clase variables
@@ -90,7 +90,7 @@ public class ClaseAlumno {
 	 * Creación del constructor de la clase ClaseAlumno
 	 */
 	
-	public ClaseAlumno(String dni,String nombre,String apellidos,float peso,float altura,LocalDate fechaNacimiento,byte numHermanos, LocalTime horaMaxAlum) throws IllegalArgumentException{
+	public ClaseAlumno(String dni,String nombre,String apellidos,float peso,float altura,LocalDate fechaNacimiento,byte numHermanos,boolean mayorEdad, LocalTime horaMaxAlum) throws IllegalArgumentException{
 		
 		if(dni == null || dni.isEmpty()) {
 			throw new IllegalArgumentException("El parametro es nulo o contiene una cadena vacia");
@@ -103,11 +103,11 @@ public class ClaseAlumno {
 		}
 		
 		if(nombre == null || nombre.isEmpty()) {
-			throw new IllegalArgumentException("El parametro es nulo o contiene una cadena vacia");
+			throw new IllegalArgumentException("El parametro (nombre) es nulo o contiene una cadena vacia");
 		}
 		
 		if(apellidos == null || apellidos.isEmpty()) {
-			throw new IllegalArgumentException("El parametro es nulo o contiene una cadena vacia");
+			throw new IllegalArgumentException("El parametro (apellidos) es nulo o contiene una cadena vacia");
 		}
 		
 		if(peso <= 0) {
@@ -140,12 +140,16 @@ public class ClaseAlumno {
 		
 	}
 	
+	//Constructor con 3 parametros llamando al parametro de 9 parametros y el resto dado valores "Por Defecto"
+	
 	public ClaseAlumno(String dni,String nombre,String apellidos) {
-		this(dni, nombre, apellidos, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, HORA_MAX_ALUM);
+		this(dni, nombre, apellidos, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, MAYOR_EDAD, HORA_MAX_ALUM);
 	}
 	
+	//Constructor con parámetros "Por Defecto"
+	
 	public ClaseAlumno() {
-		this(DNI, NOMBRE, APELLIDOS, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, HORA_MAX_ALUM);
+		this(DNI, NOMBRE, APELLIDOS, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, MAYOR_EDAD, HORA_MAX_ALUM);
 	}
 	
 	/* 3 parametros Dni, nombre y apellidos
@@ -235,6 +239,72 @@ public class ClaseAlumno {
 	}
 	
 	
+	// Metodos Getter
+	
+	public String getDni(){
+		return dni;
+	}
+	
+	public String getNombre(){
+		return nombre;
+	}
+	
+	public String getApellidos(){
+		return apellidos;
+	}
+	
+	public float getPeso(){
+		return peso;
+	}
+	
+	public float getAltura(){
+		return altura;
+	}
+	
+	public LocalDate getFechaNacimiento(){
+		return fechaNacimiento;
+	}
+	
+	public byte getNumHermanos(){
+		return numHermanos;
+	}
+	
+	public boolean getMayorEdad(){
+		return mayorEdad;
+	}
+	
+	public LocalTime getHoraMaxAlum(){
+		return horaMaxAlum;
+	}
+	
+	public static short getNumAlumnosMatriculados() {
+		return numAlumnosMatriculados;
+	}
+	
+	public String toString() {
+		return "Los datos del alumno son:"
+				+ "\n dni: " + dni 
+				+ "\n Nombre: " + nombre
+				+ "\n Apellidos: " + apellidos
+				+ "\n Peso: " + peso
+				+ "\n Alutra: " + altura
+				+ "\n Fecha de nacimiento: " + fechaNacimiento
+				+ "\n Número de hermanos: " + numHermanos
+				+ "\n Mayoria de edad? " + mayorEdad
+				+ "\n Hora máxima del alumno: " + horaMaxAlum;
+	}
+	
+	/*
+	 *  this.dni = dni;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.peso = peso;
+		this.altura = altura;
+		this.fechaNacimiento = fechaNacimiento;
+		this.numHermanos = numHermanos;
+		this.mayorEdad = MayorEdad(fechaNacimiento);
+		this.horaMaxAlum = horaMaxAlum;
+	 */
 }
 
 
