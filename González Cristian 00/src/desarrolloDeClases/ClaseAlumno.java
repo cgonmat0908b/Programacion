@@ -58,7 +58,6 @@ public class ClaseAlumno {
 	private static final float ALTURA = 1.00f;
 	private static final LocalDate FECHA_NACIMIENTO = LocalDate.of(2014, 01, 01);
 	private static final byte NUM_HERMANOS = 0;
-	private static final boolean MAYOR_EDAD = false;
 	private static final LocalTime HORA_MAX_ALUM = LocalTime.of(21, 30);
 	
 	
@@ -90,7 +89,7 @@ public class ClaseAlumno {
 	 * Creación del constructor de la clase ClaseAlumno
 	 */
 	
-	public ClaseAlumno(String dni,String nombre,String apellidos,float peso,float altura,LocalDate fechaNacimiento,byte numHermanos,boolean mayorEdad, LocalTime horaMaxAlum) throws IllegalArgumentException{
+	public ClaseAlumno(String dni,String nombre,String apellidos,float peso,float altura,LocalDate fechaNacimiento,byte numHermanos, LocalTime horaMaxAlum) throws IllegalArgumentException{
 		
 		if(dni == null || dni.isEmpty()) {
 			throw new IllegalArgumentException("El parametro es nulo o contiene una cadena vacia");
@@ -143,13 +142,13 @@ public class ClaseAlumno {
 	//Constructor con 3 parametros llamando al parametro de 9 parametros y el resto dado valores "Por Defecto"
 	
 	public ClaseAlumno(String dni,String nombre,String apellidos) {
-		this(dni, nombre, apellidos, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, MAYOR_EDAD, HORA_MAX_ALUM);
+		this(dni, nombre, apellidos, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, HORA_MAX_ALUM);
 	}
 	
 	//Constructor con parámetros "Por Defecto"
 	
 	public ClaseAlumno() {
-		this(DNI, NOMBRE, APELLIDOS, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, MAYOR_EDAD, HORA_MAX_ALUM);
+		this(DNI, NOMBRE, APELLIDOS, PESO, ALTURA, FECHA_NACIMIENTO, NUM_HERMANOS, HORA_MAX_ALUM);
 	}
 	
 	/* 3 parametros Dni, nombre y apellidos
@@ -157,6 +156,24 @@ public class ClaseAlumno {
 	 * 
 	 */
 	
+	// Constructor copia
+	
+	public ClaseAlumno(ClaseAlumno copia) throws NullPointerException{
+		
+		if(copia == null) {
+			throw new NullPointerException("El objeto que intentas copiar es nulo");
+		}
+		this.dni = copia.dni;
+		this.nombre = copia.nombre;
+		this.apellidos = copia.apellidos;
+		this.peso = copia.peso;
+		this.altura = copia.altura;
+		this.fechaNacimiento = copia.fechaNacimiento;
+		this.numHermanos = copia.numHermanos;
+		this.mayorEdad = MayorEdad(copia.fechaNacimiento);
+		this.horaMaxAlum = copia.horaMaxAlum;
+		numAlumnosMatriculados++;
+	}
 	
 	
 	//Metodo que comprueba que el formato del DNI sea 8 numeros y 1 letra dado el Dni como parametro.
@@ -242,39 +259,39 @@ public class ClaseAlumno {
 	// Metodos Getter
 	
 	public String getDni(){
-		return dni;
+		return this.dni;
 	}
 	
 	public String getNombre(){
-		return nombre;
+		return this.nombre;
 	}
 	
 	public String getApellidos(){
-		return apellidos;
+		return this.apellidos;
 	}
 	
 	public float getPeso(){
-		return peso;
+		return this.peso;
 	}
 	
 	public float getAltura(){
-		return altura;
+		return this.altura;
 	}
 	
 	public LocalDate getFechaNacimiento(){
-		return fechaNacimiento;
+		return this.fechaNacimiento;
 	}
 	
 	public byte getNumHermanos(){
-		return numHermanos;
+		return this.numHermanos;
 	}
 	
 	public boolean getMayorEdad(){
-		return mayorEdad;
+		return this.mayorEdad;
 	}
 	
 	public LocalTime getHoraMaxAlum(){
-		return horaMaxAlum;
+		return this.horaMaxAlum;
 	}
 	
 	public static short getNumAlumnosMatriculados() {
@@ -294,17 +311,10 @@ public class ClaseAlumno {
 				+ "\n Hora máxima del alumno: " + horaMaxAlum;
 	}
 	
-	/*
-	 *  this.dni = dni;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.peso = peso;
-		this.altura = altura;
-		this.fechaNacimiento = fechaNacimiento;
-		this.numHermanos = numHermanos;
-		this.mayorEdad = MayorEdad(fechaNacimiento);
-		this.horaMaxAlum = horaMaxAlum;
-	 */
+	
+	// Paso de parametros por valor es cuando en el método el return devuelve una copia del original (tipos primitivos), es decir no lo modifico, parametro por referencia
+	// es para el original (objetos)
+	
 }
 
 
