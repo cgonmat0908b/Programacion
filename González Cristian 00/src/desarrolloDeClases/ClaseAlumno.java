@@ -63,7 +63,7 @@ public class ClaseAlumno {
 	
 	// Atributos de clase variables
 	
-	private static short numAlumnosMatriculados;
+	private static short numAlumnosMatriculados = 0;
 	
 	// Atributos de objeto variables
 	
