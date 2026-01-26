@@ -8,11 +8,11 @@ public class ArticuloMain {
 		String macetaS = "Maceta";
 		Articulo maceta = new Articulo(macetaS,15,CalculoPvp(15, Articulo.IVA),4);
 		
-		System.out.printf("El producto %s tiene un precio sin IVA de %f, con el IVA de %d%%, su precio es %f y quedan %d articulos %n", maceta.nombre,maceta.precioSinIva,Articulo.IVA, maceta.pvp,maceta.cuantosQuedan);
+		System.out.printf("El producto %s tiene un precio sin IVA de %f, con el IVA de %d%%, su precio es %f y quedan %d articulos %n", maceta.getNombre(),maceta.getPrecioSinIva(),Articulo.IVA, maceta.getPVP(),maceta.getCuantosQuedan());
 		
-		maceta.precioSinIva = 27.54f;
-		maceta.pvp = CalculoPvp(maceta.precioSinIva, Articulo.IVA);
-		System.out.printf("El producto %s tiene un precio sin IVA de %f, con el IVA de %d%%, su precio es %f y quedan %d articulos %n ", maceta.nombre,maceta.precioSinIva,Articulo.IVA, maceta.pvp,maceta.cuantosQuedan);
+		maceta.setPrecioSinIva(27.54f);
+		maceta.setPVP(CalculoPvp(maceta.getPrecioSinIva(), Articulo.IVA));
+		System.out.printf("El producto %s tiene un precio sin IVA de %f, con el IVA de %d%%, su precio es %f y quedan %d articulos %n", maceta.getNombre(),maceta.getPrecioSinIva(),Articulo.IVA, maceta.getPVP(),maceta.getCuantosQuedan());
 		
 		// Articulo con precio invalido
 		
@@ -25,7 +25,7 @@ public class ArticuloMain {
 			System.out.println(ex1.getMessage());
 			piano = new Articulo(pianoA,1,CalculoPvp(1, Articulo.IVA),1);
 		}
-		System.out.printf("El producto %s tiene un precio sin IVA de %f, con el IVA de %d%%, su precio es %f y quedan %d articulos %n ",piano.nombre,piano.precioSinIva,Articulo.IVA, piano.pvp,piano.cuantosQuedan);
+		System.out.printf("El producto %s tiene un precio sin IVA de %f, con el IVA de %d%%, su precio es %f y quedan %d articulos %n ",piano.getNombre(),piano.getPrecioSinIva(),Articulo.IVA, piano.getPVP(),piano.getCuantosQuedan());
 	}
 
 	public static float CalculoPvp(float precio, final int IVA) {
