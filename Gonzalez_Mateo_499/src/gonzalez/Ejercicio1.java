@@ -107,11 +107,19 @@ public class Ejercicio1 {
 		String[] dias = {"Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"};
 		
 		for(int hora = 0; hora < diasHoras[0].length; hora++) {
+<<<<<<< HEAD
 			for(int dia = 0; dia < diasHoras.length; dia++) {
 				
 				if(diasHoras[dia][hora] < 10 ) {
 					System.out.printf("En la hora %d el primer dia con consumo menor que 10 fue: %s %n", hora,dias[dia]);
 					dia = diasHoras.length;
+=======
+			
+			for(int dia = 0; dia < diasHoras.length; dia++) {
+				if(diasHoras[dia][hora] < 10 ) {
+					System.out.printf("En la hora %d el primer dia con consumo menor que 10 fue: %s %n", hora,dias[dia]);
+					break;
+>>>>>>> 7766a9b16a5e310d1a1c7686e16f845e08a19895
 				}
 			}
 		}
