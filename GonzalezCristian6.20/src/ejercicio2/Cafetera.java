@@ -13,7 +13,7 @@ public class Cafetera {
 	
 	//Constructor con un parametro, la cantidad actual se inicializa a la capacidad maxima
 	public Cafetera(float capacidadMaxima) {
-		this(capacidadMaxima,cantidadActual = capacidadMaxima);
+		this(capacidadMaxima, capacidadMaxima);
 	}
 	
 	
@@ -33,7 +33,7 @@ public class Cafetera {
 	}
 	// Metodo que llena la cafetera, comprueba que el numero no sea negativo y que no supere la capacidadMaxima
 	public void llenarCafetera(float cantidad) throws IllegalArgumentException, IllegalStateException{
-		if(cantidad + this.capacidadMaxima > this.capacidadMaxima) {
+		if(cantidad + this.cantidadActual > this.capacidadMaxima) {
 			double sobrante = cantidad - capacidadMaxima;
 			this.cantidadActual = this.capacidadMaxima;
 			throw new IllegalStateException("No puede vertir más cafe del que cabe, ha sobrado:" + sobrante);
