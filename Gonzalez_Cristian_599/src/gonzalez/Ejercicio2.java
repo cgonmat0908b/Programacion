@@ -34,7 +34,7 @@ public class Ejercicio2 {
 		boolean numValido = false;
 		int numAleatorio = 0;
 		do {
-			numAleatorio =(int) Math.random() * 2100;
+			numAleatorio =(int) (Math.random() * 2100);
 			if(numAleatorio < 1800) {
 				numValido = false;
 			}else {
