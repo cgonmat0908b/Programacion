@@ -5,14 +5,14 @@ import java.time.temporal.ChronoUnit;
 
 public abstract class Productos {
 
-	private static int contadorCod;
+	private static int contadorCod = 1;
 	
-	protected String codigo;
+	protected final String codigo;
 	protected String nombre;
 	protected LocalDate fechaCaducidad;
 	protected int numLote;
 	
-	public Productos(String nombre, LocalDate fechaCaducidad, int numLote)throws IllegalArgumentException {
+	protected Productos(String nombre, LocalDate fechaCaducidad, int numLote)throws IllegalArgumentException {
 		
 		if(nombre.isEmpty() || nombre == null) {
 			throw new IllegalArgumentException("Nombre invalido");
@@ -32,7 +32,7 @@ public abstract class Productos {
 	}
 	//Metodo usado para generar el codigo de cada producto de forma incremental
 	
-	public String generarCodigo() {
+	private String generarCodigo() {
 		String codigo = String.format("%04d", Productos.contadorCod);
 		Productos.contadorCod++;
 		return codigo;
@@ -82,12 +82,12 @@ public abstract class Productos {
 	
 	//toString
 	public String toString() {
-		return String.format("codigo: %s %n nombre: %s % fecha de caducidad: %s %n numero de lote: %d", this.codigo,this.nombre,this.fechaCaducidad.toString(),this.numLote);
+		return String.format(" codigo: %s %n nombre: %s %n fecha de caducidad: %s %n numero de lote: %d %n", this.codigo,this.nombre,this.fechaCaducidad.toString(),this.numLote);
 	}
 	
 	//Metodo que indica si un producto esta caducado
 	
-	public boolean caducado() {
+	public boolean isCaducado() {
 		boolean caducado;
 		if(this.fechaCaducidad.isBefore(LocalDate.now())) {
 			caducado = true;
@@ -102,12 +102,13 @@ public abstract class Productos {
 	public int diasRestantes()throws IllegalStateException {
 		int dias = 0;
 		
-		if(caducado() == true) {
+		if(isCaducado() == true) {
 			throw new IllegalStateException("El producto ya esta caducado");
 		}
 		
 		if(this.fechaCaducidad.isAfter(LocalDate.now())) {
-			dias =(int) (ChronoUnit.DAYS.between(this.fechaCaducidad, LocalDate.now()));
+			dias = (int) ChronoUnit.DAYS.between(LocalDate.now(), this.fechaCaducidad);
+;
 		}
 		return dias;
 	}

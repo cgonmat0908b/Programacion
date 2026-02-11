@@ -11,15 +11,13 @@ public class Frescos extends Productos{
 	public Frescos(String nombre, LocalDate fechaCaducidad, int numLote, LocalDate fechaEnvasado, String paisOrigen)throws IllegalArgumentException {
 		super(nombre,fechaCaducidad,numLote);
 		
-		if(fechaEnvasado.isBefore(LocalDate.now()) || fechaEnvasado == null) {
+		if(fechaEnvasado == null || fechaEnvasado.isAfter(LocalDate.now())){
 			throw new IllegalArgumentException("La fecha de envasado no es valida");
 		}
 		
 		if(paisOrigen.isEmpty() || paisOrigen == null) {
 			throw new IllegalArgumentException("Pais invalido");
 		}
-		
-		this.codigo = generarCodigo();
 		this.fechaEnvasado = fechaEnvasado;
 		this.paisOrigen = paisOrigen;
 	}
@@ -35,7 +33,7 @@ public class Frescos extends Productos{
 	
 	//Setters
 	public void setFechaEnvasado(LocalDate fechaEnvasado) {
-		if(fechaEnvasado.isBefore(LocalDate.now()) || fechaEnvasado == null) {
+		if(fechaEnvasado == null || fechaEnvasado.isAfter(LocalDate.now())) {
 			throw new IllegalArgumentException("La fecha de envasado no es valida");
 		}
 		this.fechaEnvasado = fechaEnvasado;
@@ -53,7 +51,7 @@ public class Frescos extends Productos{
 	@Override
 	public String toString() {
 		String cadena = super.toString();
-		return String.format("%s %n fecha de envasado: %s %n Pais de origen: %s", cadena,this.fechaEnvasado.toString(),this.paisOrigen);
+		return String.format("%s fecha de envasado: %s %n Pais de origen: %s %n", cadena,this.fechaEnvasado.toString(),this.paisOrigen);
 		
 	}
 }
