@@ -1,0 +1,26 @@
+import java.time.LocalDate;
+
+public class GeneradorID {
+
+    private static final int ANYO_MINIMO = 2000;
+
+    // Cada posición del array representa un año
+    // índice 0 → año 2000
+    // índice 1 → año 2001
+    // etc.
+    private static int[] contadoresPorAnyo =
+            new int[LocalDate.now().getYear() - ANYO_MINIMO + 1];
+
+    public static String crearID(LocalDate fechaCreacion) {
+
+        int anyo = fechaCreacion.getYear();
+        int indice = anyo - ANYO_MINIMO;
+
+        int contador = contadoresPorAnyo[indice];
+
+        // Incrementamos para la siguiente cuenta de ese año
+        contadoresPorAnyo[indice]++;
+
+        return String.format("%d-%04d", anyo, contador);
+    }
+}
