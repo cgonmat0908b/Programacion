@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/DAW1/Desktop/Cristian DAW 1/Programacion/Gonzalez_Cristian_599/lib/libtarea1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/crist/Desktop/Daw 1/Programacion/Gonzalez_Cristian_599/lib/libtarea1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -18,7 +18,7 @@ public class Ejercicio2 {
 				
 				LocalDate fecha = LocalDate.of(anyoAleatorio(), 1, 1);
 				System.out.println(fecha);
-				cuentas[i] = new CuentaBancaria((Math.random() * 5001) ,fecha);
+				cuentas[i] = new CuentaBancaria((Math.random() * 5001) ,fecha, CuentaBancaria.MAX_DESCUBIERTO);
 				
 			}catch(IllegalArgumentException ex2) {
 				System.out.println(ex2.getMessage());
@@ -72,30 +72,41 @@ public class Ejercicio2 {
 		// Apartado 6 Operaciones multiples
 		int numOperaciones = 0;
 		
+		
+		/*
+		 * En bucle se realizan las siguientes operaciones
+			En el caso de que la cuenta fuera creada con valores predeterminados,
+			la condición para salir del bucle seran 10 operaciones ya que el metodo
+			extraer, no permitira superar el descubierto que sería 0
+		 * 
+		 */
 		do {
-			
+			// Ingreso de 100€
 			try {
-				System.out.println(cuentas[5].isDescubierta());
+				System.out.println("Previo al ingreso: " + cuentas[5].getSaldo());
 				System.out.printf("Se trata de ingresar %f€ %n ", 100.00);
 				cuentas[5].ingresar(100);
 				numOperaciones++;
 				System.out.printf("Tras el intento de ingreso la cuenta se queda en %f€ de saldo %n", cuentas[5].getSaldo());
-
-				System.out.printf("Se trata de extraer %f€ %n ", 500.00);
-				cuentas[5].extraer(500);
-				System.out.println("Saldo después de extraer: " + cuentas[5].getSaldo());
-
-				numOperaciones++;
-				System.out.printf("Tras el intento de retirada la cuenta se queda en %f€ de saldo %n", cuentas[5].getSaldo());
-				
-
 				
 			}catch(IllegalArgumentException ex3) {
 				System.out.println(ex3.getMessage());
 			}catch(IllegalStateException ex4) {
 				System.out.println(ex4.getMessage());
+			}
+			// Extracción de 500€
+			try {
+				System.out.println("Previo a la extraccion: " + cuentas[5].getSaldo());
+				System.out.printf("Se trata de extraer %f€ %n ", 500.00);
+				cuentas[5].extraer(500);
 				
+				System.out.println("Saldo después de extraer: " + cuentas[5].getSaldo());
+				numOperaciones++;
 				
+			}catch(IllegalArgumentException ex5) {
+				System.out.println(ex5.getMessage());
+			}catch(IllegalStateException ex6) {
+				System.out.println(ex6.getMessage());
 			}
 			
 		}while(!cuentas[5].isDescubierta() && numOperaciones < 10);
@@ -116,4 +127,12 @@ public class Ejercicio2 {
 
 		
 	}
+	/*
+	 * Para implementar una interfaz en un clase seria así: public class Patata implements nombreInterfaz
+	 */
 }
+
+
+
+
+

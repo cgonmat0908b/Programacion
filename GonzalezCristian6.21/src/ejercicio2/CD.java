@@ -13,6 +13,12 @@ public class CD {
 		this.contador = 0;
 	}
 	
+	//Constructor copia
+	public CD(CD copia) {
+		this.canciones = copia.canciones;
+		this.contador = copia.contador;
+	}
+	
 	// Metodo que devuelve el numero de canciones 
 	public int getNumeroCanciones() {
 		return this.contador;
