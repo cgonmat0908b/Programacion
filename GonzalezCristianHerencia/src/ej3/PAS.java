@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class PAS extends Personal {
 
-	// Cambio los idiomas a boolean ya que considero que es el tipo de dato que más conviene
+	// Cambio los idiomas a boolean ya que considero que es el tipo de dato que más conviente
 	
 	private boolean aleman;
 	private boolean chino;
@@ -32,13 +32,6 @@ public class PAS extends Personal {
 	public String toString() {
 		String cadena = super.toString();
 		return String.format("%s Sabe aleman? %b, Sabe chino? %b, Sabe ingles? %b Area a la que se dedica: %s", cadena, this.aleman, this.chino, this.ingles , this.areaAtencion);
-	}
-	
-	//Metodo que aumenta el salario de manera porcentual 
-	@Override
-	public void aumentoSalario() {
-		double porcentaje = Math.random() * 101;
-		this.salario = this.salario * (1 + (porcentaje / 100));
 	}
 	
 	// Metodo que indica el numero de idiomas que habla
