@@ -1,7 +1,9 @@
-package hashSetPrueba;
+package sets;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class HashSetPrueba {
 
@@ -11,15 +13,38 @@ public class HashSetPrueba {
 
 		int num = numRandom();
 		
-		HashSet <Integer> set = new HashSet<Integer>(num);
+		// HashSet y LinkedHashSet introducir valores
+		
+		HashSet <Integer> set = new HashSet<Integer>();
+		LinkedHashSet <Integer> Linked = new LinkedHashSet<Integer>();
+		TreeSet<Integer> Arbol = new TreeSet<Integer>();
 		
 		for(int i = 0; i < num; i++) {
-			if(!set.add(numRandom2())) {
+			num = numRandom2();
+			Integer o = Integer.valueOf(num);
+			
+			if(!set.add(o)) {
 				System.out.println("El numero ya estaba");
 			}
+			
+			if(!Linked.add(o)) {
+				System.out.println("El numero ya estaba");
+			}
+			
+			if(!Arbol.add(o)) {
+				System.out.println("El numero ya estaba");
+			}
+			
 		}
 		
-		System.out.println(set.toString());
+		// Mostrar todos los objetos HashSet
+		System.out.println("El HashSet: " + set.toString());
+		
+		// Mostrar todos los objetos HashSet
+		System.out.println("El LinkedHashSet: " + Linked);
+		
+		// Mostrar todos los objetos de TreeSet
+		System.out.println("El TreeSet: " + Arbol);
 
 		
 		// Pedir al usuario un numero e indicar si esta o no en el HasSet
@@ -86,6 +111,7 @@ public class HashSetPrueba {
 		System.out.println("El set antes de la interseccion contiene: " + set.toString());
 		try {
 			set.retainAll(nuevo);
+			System.out.println(nuevo);
 			
 		}catch(ClassCastException ex1) {
 			System.out.println(ex1.getMessage());
@@ -100,8 +126,42 @@ public class HashSetPrueba {
 		System.out.println("Tras la interseccion contiene: " + set.toString());
 		
 		
+		// Uso del metodo con el bucle for each 
+		int sumaPares = sumaPares(nuevo);
+		int sumaImpares = sumaImpares(nuevo);
+		
+		System.out.println("La suma de los pares de la coleccion (nuevo) es = " + sumaPares);
+		System.out.println("La suma de los impares de la coleccion (nuevo) es = " + sumaImpares);
+		
 		
 	}
+	
+	
+	// Uso del bucle for each en un metodo para calcular la suma de todos los pares
+	public static int sumaPares(HashSet<Integer> cualquiera) {
+		int sumaPar = 0;
+		for(Integer i : cualquiera) {
+			int entero = i.intValue();
+			if(entero % 2 == 0) {
+				sumaPar = sumaPar + entero;
+			}
+		}
+		return sumaPar;
+	}
+	
+	// Uso del bucle for each en un metodo para calcular la suma de todos los impares
+	public static int sumaImpares(HashSet<Integer> cualquiera) {
+		int sumaImpar = 0;
+		for(Integer i : cualquiera) {
+			int entero = i.intValue();
+			if(entero % 2 != 0) {
+				sumaImpar = sumaImpar + entero;
+			}
+		}
+		return sumaImpar;
+	}
+	
+	
 	
 	public static int numRandom() {
 		int numAleatorio = (int)(Math.random() * 51) + 50;
