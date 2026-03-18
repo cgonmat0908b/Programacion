@@ -1,6 +1,6 @@
 package ejercicio1;
 
-public class Atleta {
+public class Atleta implements Comparable<Atleta>{
 
 	private String nombre;
 	private byte edad;
@@ -60,5 +60,9 @@ public class Atleta {
 	public String toString() {
 		return "Atleta [nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + "]";
 	}
+	@Override
+	public int compareTo(Atleta atleta) { 
+        return  Byte.compare(atleta.edad, this.edad);
+   }
 	
 }
