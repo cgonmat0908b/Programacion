@@ -2,9 +2,11 @@ package ejercicio2;
 
 import java.time.LocalDate;
 import java.time.Year;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -17,6 +19,7 @@ public class Main {
 		
 		Contacto nuevo = null;
 		boolean acabar = false;
+		boolean existe = false;
 		
 		do {
 			System.out.println("Opción 1 Añadir Contacto: (1)" );
@@ -27,26 +30,87 @@ public class Main {
 			
 			String eleccion = datos.next();
 			
+			// Ingresar contacto si el telefono no esta ya en la lista
+			
 			if(eleccion.equals("1")) {
 				nuevo = generarContacto();
-				agenda.add(nuevo);
+				existe = false;
 				iterador = agenda.iterator();
-				System.out.println("Se ha añadio el siguiente contacto: " + nuevo);
+				
+				while(iterador.hasNext() && !existe) {
+					Contacto numExistente =  iterador.next();
+					if(nuevo.getTelefono().equals(numExistente.getTelefono())) {
+						existe = true;
+					}
+					
+				}
+				
+				if(!existe) {
+					agenda.add(nuevo);
+					System.out.println("Se ha añadido el siguiente contacto: " + nuevo);
+				}else {
+					System.out.println("El contacto ya existe");
+				}
+				
+			// Dado un nombre, recorrer el LinkedList y mostrar todos los datos del contacto
 				
 			}else if(eleccion.equals("2")) {
 				System.out.println("Introduce un nombre:");
 				String nombre = datos.next();
-				// Uso de iterador
-				while(iterador.hasNext()) {
-					
+				iterador = agenda.iterator();
+				existe = false;
+				
+				if(!iterador.hasNext()) {
+					System.out.println("No hay ningun contacto en la agenda");
 				}
 				
+				
+				while(iterador.hasNext() && !existe) {
+					Contacto existente = iterador.next();
+					if(existente.getNombre().equals(nombre)) {
+						System.out.println(existente);
+						existe = true;
+					}
+	
+				}
+				if(!existe) {
+					System.out.println("El contacto no existe");
+				}
+				
+			// Mostrar datos de todos los contactos ordenados por nombre	
 			}else if(eleccion.equals("3")) {
+				System.out.println("Antes de la ordenación por nombre:");
+				
+				for(Contacto x:agenda) {
+					System.out.println(x);
+				}
+				
+				Collections.sort(agenda);
+				System.out.println("Tras la ordenación por nombre:");
+				
+				for(Contacto x:agenda) {
+					System.out.println(x);
+				}
+				
 				
 			}else if(eleccion.equals("4")) {
+				System.out.println("Introduce una fecha con el siguiente formato: \"yyyy-mm-dd\"");
+				datos.next();
+				String fecha = datos.nextLine();
+				
+				if(Pattern.matches(fecha, "^\\\\d{4}-\\\\d{2}-\\\\d{2}$")){
+					LocalDate fechaIntro = LocalDate.parse(fecha);
+					for(Contacto x:agenda) {
+						if(x.getFechaNacim())
+					}
+					
+				}else {
+					System.out.println("El formato de la fecha no corresponde.");
+				}
+				
 				
 			}else if(eleccion.equals("Acabar")) {
-				
+				acabar = true;
 			}
 		}while(acabar == false);
 		

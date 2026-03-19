@@ -97,7 +97,7 @@ public class Contacto implements Comparable<Contacto> {
 	// compareTo
 	@Override
 	public int compareTo(Contacto contacto) {
-		return contacto.nombre.compareTo(this.nombre);
+		return this.nombre.compareTo(contacto.nombre);
 	}
 	
 	
