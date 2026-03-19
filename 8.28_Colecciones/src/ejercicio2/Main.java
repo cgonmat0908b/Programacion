@@ -101,7 +101,6 @@ public class Main {
 				if(Pattern.matches(fecha, "^\\\\d{4}-\\\\d{2}-\\\\d{2}$")){
 					LocalDate fechaIntro = LocalDate.parse(fecha);
 					for(Contacto x:agenda) {
-						if(x.getFechaNacim())
 					}
 					
 				}else {
