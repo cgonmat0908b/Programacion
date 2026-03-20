@@ -1,9 +1,10 @@
-package ejercicio2;
+package ejercicio3;
 
 import java.time.LocalDate;
 import java.time.Year;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -14,7 +15,7 @@ public class Main {
 		
 		Scanner datos = new Scanner(System.in);
 
-		LinkedList<Contacto> agenda = new LinkedList<>();
+		LinkedHashSet<Contacto> agenda = new LinkedHashSet<>();
 		Iterator <Contacto> iterador = agenda.iterator();
 		
 		Contacto nuevo = null;
@@ -55,6 +56,7 @@ public class Main {
 			// Dado un nombre, recorrer el LinkedList y mostrar todos los datos del contacto
 				
 			}else if(eleccion.equals("2")) {
+				datos.nextLine();
 				System.out.println("Introduce un nombre:");
 				String nombre = datos.nextLine();
 				iterador = agenda.iterator();
@@ -81,14 +83,16 @@ public class Main {
 			}else if(eleccion.equals("3")) {
 				System.out.println("Antes de la ordenación por nombre:");
 				
+				
 				for(Contacto x:agenda) {
 					System.out.println(x);
 				}
+				LinkedList <Contacto> ordenacion = new LinkedList<>(agenda);
+				Collections.sort(ordenacion);
 				
-				Collections.sort(agenda);
 				System.out.println("Tras la ordenación por nombre:");
 				
-				for(Contacto x:agenda) {
+				for(Contacto x:ordenacion) {
 					System.out.println(x);
 				}
 				
