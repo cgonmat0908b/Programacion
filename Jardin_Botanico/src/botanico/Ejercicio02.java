@@ -21,6 +21,14 @@ public class Ejercicio02 {
         // Variables de entrada
         
         // Variables auxiliares
+    	Iterator<String> iterador1;
+    	Iterator<String> iterador2;
+    	
+    	int indicePos = 0;
+    	
+    	String planta1;
+    	String planta2;
+    	
     	
         // Variables de salida
     	LinkedList<String> lista1 = new LinkedList<String>();
@@ -75,7 +83,10 @@ public class Ejercicio02 {
         System.out.println();
         
      // Apartado 2.1, 2.2, 2.3, 2.4
-        for(int i = 0; i < lista1.size(); i++) {
+        
+        // Sin iteradores
+        
+      /*  for(int i = 0; i < lista1.size(); i++) {
         	if(lista1.get(i).equals(lista2.get(i))) {
         		// 2.1 
         		popularesLista.add(lista1.get(i));
@@ -96,7 +107,38 @@ public class Ejercicio02 {
         		lista1.add(i, popular);
         		lista2.add(i, popular);
         	}
+        } */
+        
+        // Con iteradores
+        
+        iterador1 = lista1.iterator();
+        iterador2 = lista2.iterator();
+        
+        while(iterador1.hasNext() && iterador2.hasNext()) {
+        	
+        	planta1 = iterador1.next();
+        	planta2 = iterador2.next();
+        	
+        	if(planta1.equals(planta2)) {
+        		// 2.1 
+        		popularesLista.add(planta1);
+        		
+        		// 2.2
+        		popularesSet.add(planta1);
+        		
+        		// 2.3
+        		posicionesPopulares.add(indicePos);
+        		
+        		// 2.4 Marcar las populares en cada lista con * xxxx *
+        		lista1.set(indicePos, "* " + lista1.get(indicePos) + " *");
+        		lista2.set(indicePos, "* " + lista2.get(indicePos) + " *");
+        		
+        		indicePos++;
+        		
+        	}
         }
+        
+        
 
         // Apartado 3.2 Contenido final de la primera lista
         System.out.println("Tras modificar las listas:");
