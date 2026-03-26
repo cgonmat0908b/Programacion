@@ -1,15 +1,16 @@
 package Corregir;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public abstract class Vivienda {
 	
 	//Atributos por defecto
-	protected final LocalDate FECHA_CONSTRUCCION_DEFECTO = LocalDate.of(2000, 1, 1);
-	protected final String DIRECCION_DEFECTO = "Desconocida";
-	protected final float PRECIO_NOCHE_DEFECTO = 50;
-	protected final boolean DISPONIBLE_DEFECTO = true;
+	public static final LocalDate FECHA_CONSTRUCCION_DEFECTO = LocalDate.of(2000, 1, 1);
+	public static final String DIRECCION_DEFECTO = "Desconocida";
+	public static final float PRECIO_NOCHE_DEFECTO = 50;
+	public static final boolean DISPONIBLE_DEFECTO = true;
 	
 	protected static int ultimoAnyo = 0;
 	protected static int contadorAnyos = 0;
@@ -36,26 +37,32 @@ public abstract class Vivienda {
 	// Constructor por defecto
 	public Vivienda() {
 
-		this.fechaConstruccion = FECHA_CONSTRUCCION_DEFECTO;
-		this.direccion = DIRECCION_DEFECTO;
-		this.precioNoche = PRECIO_NOCHE_DEFECTO;
-		this.disponible = DISPONIBLE_DEFECTO;
-		this.IDENTIFICADOR = generarId();
+		this(FECHA_CONSTRUCCION_DEFECTO, DIRECCION_DEFECTO, PRECIO_NOCHE_DEFECTO, DISPONIBLE_DEFECTO);
 		
 	}
 	
 	
 	// Metodo para generar identificador de la vivienda
-	protected String generarId() {
-		
-		if(Vivienda.ultimoAnyo == this.fechaConstruccion.getYear()) {
-			Vivienda.contadorAnyos++;
-		}
-		
-		String id = String.format("%d-%d ", this.fechaConstruccion.getYear(), Vivienda.contadorAnyos );
-		Vivienda.ultimoAnyo = this.fechaConstruccion.getYear();
-		
-		return id;
+	protected String generarId()throws IllegalStateException {
+	    
+	    if (numViviendas >= 1000) {
+	        throw new IllegalStateException("No se pueden crear más de 1000 viviendas");
+	    }
+
+	    int anyo = this.fechaConstruccion.getYear() % 100; // AA (dos últimas cifras)
+
+	    if (Vivienda.ultimoAnyo == anyo) {
+	        Vivienda.contadorAnyos++;
+	    } else {
+	        Vivienda.contadorAnyos = 0;
+	        Vivienda.ultimoAnyo = anyo;
+	    }
+
+	    String id = String.format("%02d-%03d", anyo, Vivienda.contadorAnyos);
+
+	    Vivienda.numViviendas++;
+
+	    return id;
 	}
 	
 	// Metodo que devuelve el numero de viviendas creadas
@@ -78,6 +85,27 @@ public abstract class Vivienda {
 	
 	// Metodo abstracto que cada clase hija implementa de una manera diferente
 	abstract void precioEstancia(int numDias);
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(IDENTIFICADOR, direccion, disponible, fechaConstruccion, precioNoche);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vivienda other = (Vivienda) obj;
+		return Objects.equals(IDENTIFICADOR, other.IDENTIFICADOR) && Objects.equals(direccion, other.direccion)
+				&& disponible == other.disponible && Objects.equals(fechaConstruccion, other.fechaConstruccion)
+				&& Float.floatToIntBits(precioNoche) == Float.floatToIntBits(other.precioNoche);
+	}
 	
 	
 	
