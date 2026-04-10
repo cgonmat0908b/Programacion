@@ -2,6 +2,7 @@ package operArrayList;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -31,11 +32,12 @@ public class Main {
 		}catch(Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+		
 		System.out.println("2. Número de registros añadidos a la lista: " + contadorRegistros);
 		
 		
 		/*3. Ordena los registros por grupo y nombre.*/
-		ArrayList<String> listaRegistros = new ArrayList<String>();
+		ArrayList<Alumno> listaRegistros = new ArrayList<Alumno>();
 		
 		try {
 			Scanner datos = new Scanner(fichero);
@@ -57,12 +59,25 @@ public class Main {
 				
 				Alumno alum = new Alumno(grupo,apellidos,nombre,mates,lengua,fisica,quimica,ingles);
 				
-				listaRegistros.add(nombre)
+				
+				listaRegistros.add(alum);
 			}
+			Collections.sort(listaRegistros);
 			
 		}catch(Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+		
+		System.out.println("3. Ordenamos la lista por grupo y nombre...\r\n"
+				+ "Guardamos la lista ordenada en: notasPorGrupoYNombre.txt");
+		
+		/*4. Inserta siguiente registro:
+			 1º ESO D;López Muro, Rosario;3;3;4;4;3
+		*/
+		
+		Alumno rosario = new Alumno("1º ESO D","López Muro","Rosario",(byte)3,(byte)3,(byte)4,(byte)4,(byte)3);
+		listaRegistros.add(rosario);
+		
 	}
 
 }
