@@ -82,19 +82,30 @@ public class Alumno implements Comparable<Alumno>{
 			comparacion = 0;
 			if(this.getNombre().compareTo(o.getNombre()) == 0) {
 				comparacion = 0;
-			}else if(this.getNombre().compareTo(o.getNombre()) == 1){
+			}else if(this.getNombre().compareTo(o.getNombre()) > 0){
 				comparacion = 1;
 			}else {
 				comparacion = -1;
 			}
 			
-		}else if(this.getGrupo().compareTo(o.getGrupo()) == 1){
+		}else if(this.getGrupo().compareTo(o.getGrupo()) > 0){
 			comparacion = 1;
 		}else {
 			comparacion = -1;
 		}
 		
 		return comparacion;
+	}
+	
+	@Override
+	public String toString() {
+	    return this.grupo + ";" 
+	         + this.apellidos + ", " + this.nombre + ";" 
+	         + this.notaMat + ";" 
+	         + this.notaLengua + ";" 
+	         + this.notaFisica + ";" 
+	         + this.notaQuimica + ";" 
+	         + this.notaIngles;
 	}
 	
 }

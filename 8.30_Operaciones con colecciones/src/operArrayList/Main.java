@@ -1,6 +1,8 @@
 package operArrayList;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -68,6 +70,23 @@ public class Main {
 			System.out.println(ex.getMessage());
 		}
 		
+		// Guardar la lista ordenada en un archivo
+		
+		File listaOrdenada = new File("Notas1/notasPorGrupoYNombre.txt");
+		
+		try{
+			FileWriter escritura = new FileWriter(listaOrdenada);
+			
+			for(Alumno datos : listaRegistros) {
+				escritura.write(datos.toString() + "\n");
+			}
+			escritura.close();
+			
+		}catch(IOException ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		
 		System.out.println("3. Ordenamos la lista por grupo y nombre...\r\n"
 				+ "Guardamos la lista ordenada en: notasPorGrupoYNombre.txt");
 		
@@ -77,6 +96,8 @@ public class Main {
 		
 		Alumno rosario = new Alumno("1º ESO D","López Muro","Rosario",(byte)3,(byte)3,(byte)4,(byte)4,(byte)3);
 		listaRegistros.add(rosario);
+		
+		
 		
 	}
 
