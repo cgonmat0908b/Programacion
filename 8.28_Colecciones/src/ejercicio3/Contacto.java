@@ -1,6 +1,7 @@
 package ejercicio3;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Contacto implements Comparable<Contacto> {
 
@@ -99,7 +100,7 @@ public class Contacto implements Comparable<Contacto> {
 	public int compareTo(Contacto contacto) {
 		return this.nombre.compareTo(contacto.nombre);
 	}
-	
-	
+
+
 	
 }
