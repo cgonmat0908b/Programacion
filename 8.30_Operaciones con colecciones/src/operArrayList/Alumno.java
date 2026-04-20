@@ -49,7 +49,10 @@ public class Alumno implements Comparable<Alumno>{
 	public byte getNotaIngles() {
 		return notaIngles;
 	}
-	
+	public String getApellidos() {
+		return apellidos;
+	}
+
 	// Setters
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
@@ -71,6 +74,9 @@ public class Alumno implements Comparable<Alumno>{
 	}
 	public void setNotaIngles(byte notaIngles) {
 		this.notaIngles = notaIngles;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
 	// CompareTo
