@@ -1,7 +1,15 @@
 package operArrayList;
 
-public class Alumno implements Comparable<Alumno>{
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 
+public class Alumno implements Comparable<Alumno>, Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String grupo;
 	private String apellidos;
 	private String nombre;
@@ -10,6 +18,7 @@ public class Alumno implements Comparable<Alumno>{
 	private byte notaFisica;
 	private byte notaQuimica;
 	private byte notaIngles;
+	
 	
 	
 	
